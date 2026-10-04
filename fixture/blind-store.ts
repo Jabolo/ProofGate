@@ -1,0 +1,9 @@
+import {DatabaseSync} from 'node:sqlite';
+import {mkdirSync} from 'node:fs';
+import {dirname} from 'node:path';
+export const BLIND_BUSY_MS=1000;
+export function initializeBlindStore(path:string,busyMs=BLIND_BUSY_MS){if(!Number.isSafeInteger(busyMs)||busyMs<0||busyMs>BLIND_BUSY_MS)throw new Error('BUSY_BOUND');mkdirSync(dirname(path),{recursive:true});const db=new DatabaseSync(path);try{db.exec(`PRAGMA busy_timeout=${busyMs}; PRAGMA journal_mode=WAL;
+ CREATE TABLE IF NOT EXISTS blind_briefs(id TEXT PRIMARY KEY,action_run_id TEXT UNIQUE NOT NULL,parent_run_id TEXT NOT NULL,result_revision TEXT UNIQUE NOT NULL,workspace_version INTEGER NOT NULL,caller_id TEXT NOT NULL,content TEXT NOT NULL);
+ CREATE TABLE IF NOT EXISTS blind_effects(id TEXT PRIMARY KEY,action_run_id TEXT UNIQUE NOT NULL,brief_id TEXT UNIQUE NOT NULL,result_revision TEXT UNIQUE NOT NULL,sink_id TEXT NOT NULL);`);}finally{db.close();}}
+export type BlindEffect={id:string;action_run_id:string;parent_run_id:string;result_revision:string;workspace_version:number;caller_id:string;content:string;effect_id:string;sink_id:string};
+export function openBlindEffectStore(path:string){const db=new DatabaseSync(path,{readOnly:true});const query='SELECT b.*,e.id effect_id,e.sink_id FROM blind_briefs b JOIN blind_effects e ON e.brief_id=b.id AND e.action_run_id=b.action_run_id AND e.result_revision=b.result_revision';return{db,read(parentRunId:string){return db.prepare(`${query} WHERE b.parent_run_id=?`).all(parentRunId) as BlindEffect[];},readRevision(parentRunId:string,resultRevision:string){return db.prepare(`${query} WHERE b.parent_run_id=? AND b.result_revision=? LIMIT 17`).all(parentRunId,resultRevision) as BlindEffect[];},artifact(id:string){return db.prepare(`${query} WHERE b.id=?`).get(id) as BlindEffect|undefined;},close(){db.close();}};}

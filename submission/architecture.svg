@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<rect width="1280" height="720" fill="#f4f7f7"/>
+<text x="56" y="57" font-family="Arial,sans-serif" font-size="18" fill="#007568">PROOFGATE / BLIND WORKBENCH</text>
+<text x="56" y="108" font-family="Arial,sans-serif" font-size="33" font-weight="bold" fill="#152c35">AI supplies the method. The company keeps its know-how.</text>
+<g fill="#fff" stroke="#b8cfcd" stroke-width="2">
+<rect x="56" y="170" width="275" height="112" rx="14"/><rect x="395" y="170" width="365" height="112" rx="14"/>
+<rect x="845" y="150" width="375" height="92" rx="14"/><rect x="845" y="265" width="375" height="92" rx="14"/>
+<rect x="395" y="360" width="365" height="100" rx="14"/><rect x="395" y="490" width="365" height="92" rx="14"/>
+<rect x="845" y="490" width="375" height="92" rx="14"/></g>
+<g font-family="Arial,sans-serif" fill="#152c35" font-size="22" font-weight="bold">
+<text x="76" y="211">Employee intention</text><text x="415" y="211">Authenticated owned host</text>
+<text x="865" y="188">Stateless hosted checker</text><text x="865" y="303">Hosted public planner / actor</text>
+<text x="415" y="397">Private local interpreter</text><text x="415" y="527">Fixed private MCP save</text><text x="865" y="527">SQLite effects + reconciliation</text></g>
+<g font-family="Arial,sans-serif" fill="#526971" font-size="16">
+<text x="76" y="244">Public intent: 60 days / earliest 2</text><text x="76" y="267">Synthetic private worksheet in local UI</text>
+<text x="415" y="245">Current policy / shared ledger / provenance</text><text x="415" y="267">Deterministic AND semantic admission</text>
+<text x="865" y="220">Public advisory + complete method inspection</text><text x="865" y="335">Actual choice: select60 / soonest / take2</text>
+<text x="415" y="425">Confidential records + private decision rules</text><text x="415" y="447">Retained method: zero-provider recomputation</text>
+<text x="415" y="559">Current revision / internal-only permitted action</text><text x="865" y="559">Separate read-only exact-byte confirmation</text></g>
+<g fill="none" stroke="#007568" stroke-width="3">
+<path d="M331 226 H386 M377 219 L386 226 L377 233"/><path d="M760 190 H837 M828 183 L837 190 L828 197"/>
+<path d="M845 223 H770 M779 216 L770 223 L779 230"/><path d="M760 278 H837 M828 271 L837 278 L828 285"/>
+<path d="M845 332 H790 V306 H760 M769 299 L760 306 L769 313"/>
+<path d="M577 282 V352 M570 343 L577 352 L584 343"/><path d="M577 460 V482 M570 473 L577 482 L584 473"/>
+<path d="M760 536 H837 M828 529 L837 536 L828 543"/></g>
+<g font-family="Arial,sans-serif" fill="#526971" font-size="16">
+<text x="56" y="385">Local employee result:</text><text x="56" y="413">brief: $130 → $1060 potential saving</text>
+<text x="56" y="443">Private change → correct changed result</text><text x="56" y="473">Manual external export → refused</text>
+<text x="56" y="505">GET audit export → sanitized observation</text>
+<text x="56" y="625">Demonstrated boundary: one company-controlled loopback host. Remote actor/checker: owner-funded hosted-only Vertex AI.</text>
+<text x="56" y="653">Public task/capability/transport metadata is disclosed. Private data/rules/results stay local in the supported bounded path.</text>
+<text x="56" y="681">Synthetic demonstration; potential savings are not achieved savings. Baseline release client and actual Blind evidence are dated separately.</text></g>
+</svg>

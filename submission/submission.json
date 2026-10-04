@@ -1,0 +1,3020 @@
+{
+  "schemaVersion": "proofgate-submission-3",
+  "language": "en",
+  "title": "ProofGate: Public Plans, Private Results",
+  "description": "AI supplies the method. The company keeps its know-how. ProofGate mediates public AI planning, confidential local execution and permitted actions through one authenticated, configurable control layer.\n\nIn the Blind Workbench, an employee prepares a supplier-renewal negotiation brief. The hosted actor composes approved operations from a public objective, capability vocabulary and admitted public advisory. Deterministic admission and a real stateless hosted checker inspect the advisory and complete method. Synthetic supplier records, confidential quotes, private negotiation rules and computed briefs stay in the demonstrated company-controlled local host. Changing a private quote or rule changes the useful result under the retained actual method with zero new provider attempts and unchanged captured public application bodies. A current permitted internal save is checked against separately observed SQLite bytes; stale saves and manually attempted external exports have zero forbidden effects.\n\nFour frozen actual semantic observations and two prepared public objective compositions are retained evidence, not general accuracy or a comparative superiority claim. A previously unprepared public intention asked for at most two renewals within 60 days, earliest first. Actual AI chose 60/soonest/2; independently expected private results changed from $130 to $1060 potential saving after a quote/rule change, with zero new provider attempts and exact independent internal save. This establishes one bounded intention, without comparative superiority. Finite shared call and conservative request/response/output admission cover hosted actor, checker, authentication and MCP work. Unknown dispatched work stays charged and unreplayed. The original combined 32-attempt forecast was exceeded: 24 proof attempts plus 12 later walkthrough tool attempts; this is disclosed separately from the accepted proof ceiling.\n\nThe release-assistant demonstration remains dated baseline evidence. Its on/off advisory exposure changed with no observed downstream causal benefit. The current Blind scene, English editable presentation, PDF, real screenshot, four dated automated walkthroughs and explicitly paced seven-capture current-intention backup form the local package. The fourth walkthrough reused the actual 60-day method, charging four tool attempts / 1050011 credits with zero provider attempts. No human rehearsal or continuous recording is established.\n\nThe single operational backend is owner-funded hosted-only Vertex AI, not a local LLM. That differs from the brief's local-model expectation; organizer approval is not established. Local compute/time extension is conceptual, observed tokens and unpriced tariff estimates remain separate from admission credits, and potential savings are not achieved savings. Protection is bounded to supported public inputs and private local execution; arbitrary pasted secrets, arbitrary company know-how and universal security are not established. Current regression, independent review/security/UI and canonical verification substantively reassess all 26 obligations. Local acceptance does not establish organizer approval or authorize external submission. Team contact, accounts and access remain owner-managed; external submission, deployment, publication, messaging and Git push are unauthorized.",
+  "team": {
+    "name": "ProofGate",
+    "members": [
+      {
+        "name": "Michał Jabłoński",
+        "role": "Team lead; AI/data science, backend, databases, DevOps/cloud, architecture, product management, pitching/presentations"
+      },
+      {
+        "name": "Karol Krawczyk",
+        "role": "AI/data science, backend, software architecture and development"
+      },
+      {
+        "name": "Kamil Krawczyk",
+        "role": "AI/data science, backend, cybersecurity, DevOps/cloud, business/marketing"
+      },
+      {
+        "name": "Viktoriia Vinnykova",
+        "role": "Design/UX, frontend, pitching/storytelling, QA/testing"
+      }
+    ]
+  },
+  "architecture": "Authenticated loopback employee browser → owned host identity/current policy/shared ledger → stateless hosted advisory checker → hosted public planner → stateless whole-method checker → admitted bounded local interpreter on synthetic confidential records/rules → fixed private MCP internal save → separate SQLite effect recorder and read-only exact-content reconciliation. Public objectives/capability/transport metadata are disclosed; private records/rules/results are not sent to remote models in this bounded path.",
+  "artifacts": [
+    "architecture.svg",
+    "backup.mp4",
+    "evidence.json",
+    "pitch.md",
+    "presentation.pdf",
+    "presentation.pptx",
+    "rehearsal.md",
+    "submission.json",
+    "workbench.png"
+  ],
+  "setup": {
+    "node": "22.23.1",
+    "npm": "10.9.8",
+    "commands": {
+      "install": "npm ci --ignore-scripts",
+      "build": "npm run build",
+      "test": "npm test",
+      "start": "npm start",
+      "metadata": "node scripts/check-delivery.mjs --stage metadata",
+      "content": "node scripts/check-delivery.mjs --stage content",
+      "release": "node scripts/check-delivery.mjs --stage release"
+    },
+    "environment": {
+      "PROOFGATE_TOKEN": "Generate a private random local gateway token of at least 16 characters; keep it out of Git, exports and captures.",
+      "PROOFGATE_HOST_DB": "Optional host path; default .proofgate/host.sqlite. Root manages the existing live store.",
+      "PROOFGATE_FIXTURE_DB": "Optional separate fixture path; default .proofgate/fixture.sqlite. Preserve prior effects.",
+      "GOOGLE_APPLICATION_CREDENTIALS": "Optional owned authorized-user ADC file; otherwise gcloud application-default authorized-user ADC. Never export its contents.",
+      "PROOFGATE_ARTIFACT_PYTHON": "Content/release only: absolute bundled Python executable resolved by the workspace dependency loader, with reportlab, pypdf and PIL. No application install or machine path is persisted."
+    },
+    "hosted": {
+      "provider": "Vertex AI",
+      "project": "hackathon-gdg-wroclaw",
+      "location": "global",
+      "actor": "gemini-3.5-flash",
+      "checker": "gemini-3.5-flash-lite",
+      "credentials": "Owned authorized-user ADC via gcloud auth application-default login. Service-account, federation and metadata transports are rejected by the supported adapter.",
+      "funding": "Owner-funded access to the fixed project and allowed models, with reviewed same-epoch finite headroom. No organizer subscription assumed.",
+      "offline": "npm test needs no ADC/provider network; injected transport/model mode establishes implementation behavior, not model quality. eval:hosted is opt-in, root-coordinated and paid; stale Phase02 approvals cannot be reused."
+    },
+    "stores": {
+      "host": ".proofgate/host.sqlite",
+      "fixture": ".proofgate/fixture.sqlite",
+      "persistentEpoch": true,
+      "reset": false,
+      "recovery": "Interrupted dispatched work remains charged; no restart/resume guarantee or automatic replay."
+    },
+    "api": [
+      {
+        "request": "POST /api/runs",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict {scenario: clean|hostile|missing, advisory?: nonempty string <=4096 UTF-8 bytes}; 202 {runId}; capacity 4 active/0 queued, excess 503 RUN_CAPACITY with no dispatch or charge."
+      },
+      {
+        "request": "GET /api/runs/:id",
+        "authentication": "Bearer local gateway token",
+        "contract": "Sanitized owned RunView with draft, independent effects, policy/feed identity, resources and current audit/measurement projection."
+      },
+      {
+        "request": "GET /api/runs/:id/export",
+        "authentication": "Bearer local gateway token",
+        "contract": "Bounded proofgate-evidence-1 JSON export; allowlisted events/attempts/current policy/feed/whole-epoch usage and independently reopened effects, no raw reasoning or credentials."
+      },
+      {
+        "request": "GET /api/policy",
+        "authentication": "Bearer local gateway token",
+        "contract": "Current accepted policy snapshot."
+      },
+      {
+        "request": "PUT /api/policy",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict {expectedVersion, policy}; candidate.version=expectedVersion+1, feedVersion=current feed; stale 409, invalid 400, accepted usage/epoch retained."
+      },
+      {
+        "request": "GET /api/feed",
+        "authentication": "Bearer local gateway token",
+        "contract": "Current accepted literal signature feed."
+      },
+      {
+        "request": "PUT /api/feed",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict {expectedVersion, feed}; feed.version=expectedVersion+1; bounded literal strings, no code/regex; atomically advances policy identity. All API routes reject missing auth with 401."
+      },
+      {
+        "request": "POST /api/blind/runs",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict public taskId and optional public advisory <=4096 UTF-8 bytes. Server-owned run; real public method composition; default omitted advisory remains supported."
+      },
+      {
+        "request": "GET /api/blind/runs/:id",
+        "authentication": "Bearer local gateway token",
+        "contract": "Owned current/stale local result, public recipe/captures, shared ledger and independent save observation."
+      },
+      {
+        "request": "GET /api/blind/workspace",
+        "authentication": "Bearer local gateway token",
+        "contract": "Authenticated synthetic private records/rules in company-controlled local host."
+      },
+      {
+        "request": "PUT /api/blind/private",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict expectedVersion plus private records; advances workspace version without provider attempts."
+      },
+      {
+        "request": "PUT /api/blind/rules",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict expectedVersion plus private rules; advances workspace version without provider attempts."
+      },
+      {
+        "request": "POST /api/blind/runs/:id/rebind",
+        "authentication": "Bearer local gateway token",
+        "contract": "Empty object; retained admitted actual recipe recomputes current private result without provider attempts."
+      },
+      {
+        "request": "POST /api/blind/runs/:id/save",
+        "authentication": "Bearer local gateway token",
+        "contract": "Current server-issued resultRevision; new registered internal-save action charged in same allowance epoch."
+      },
+      {
+        "request": "GET /api/blind/artifacts/:id",
+        "authentication": "Bearer local gateway token",
+        "contract": "Authenticated immutable internal brief, revision/action provenance and exact contentHash."
+      },
+      {
+        "request": "GET /api/blind/runs/:id/export",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict sanitized proofgate-blind-evidence-1; GET-only observation, no new model dispatch/save."
+      },
+      {
+        "request": "POST /api/blind/runs/:id/export",
+        "authentication": "Bearer local gateway token",
+        "contract": "Strict resultRevision and destination external; labeled manual deterministic refusal with zero sink effects."
+      },
+      {
+        "request": "POST /api/blind/reset",
+        "authentication": "Bearer local gateway token",
+        "contract": "Empty object; synthetic worksheet reset advances workspace version and preserves ledger, attempts and effects."
+      }
+    ],
+    "demo": [
+      "Start supported loopback host http://127.0.0.1:3100 with owner-managed token and authorized ADC; root preserves existing live stores/epoch and controls any paid dispatch.",
+      "Inspect a retained actual hosted method; distinguish public objective/capabilities/advisory from confidential local worksheet and rules. Fresh composition is paid and requires the reviewed finite allocation.",
+      "Change a synthetic private quote/rule, rebind the retained admitted recipe, inspect correct changed brief and zero new provider attempts/unchanged exact public bodies.",
+      "A fresh internal save incurs tool attempts; refuse a labeled manual external export with zero sink effects, then inspect the exact independent internal read-back. The sanitized GET export is a separate allowed observation.",
+      "Reset synthetic worksheet at a higher workspace version; do not reset allowance or delete effects. Use the paced recorded backup only as dated observation with no new save."
+    ]
+  },
+  "sources": {
+    "team": "TEAM.md",
+    "requirements": ".planning/REQUIREMENTS.md",
+    "contracts": "src/contracts.ts",
+    "host": "src/host.ts",
+    "model": "src/model.ts",
+    "fixture": "fixture/server.ts",
+    "policy": "config/policy.json",
+    "feed": "config/signatures.json",
+    "cases": "test/cases.json",
+    "historicalCases": "test/phase02-cases.json",
+    "phase02Evidence": ".planning/phases/02-hybrid-threat-and-data-controls/LIVE-EVIDENCE.md",
+    "phase03Verification": ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+    "phase04Tests": "test/offline/evidence.test.ts",
+    "blind": "src/blind.ts",
+    "blindEvidence": "src/blind-evidence.ts",
+    "blindCases": "test/blind-cases.json",
+    "blindTests": "test/offline/blind.test.ts",
+    "proofValidator": "scripts/check-blind-proof.mjs",
+    "deliverySourceCheck": ".planning/phases/05-blind-workbench/05-DELIVERY-CHECK.md",
+    "blindIntentionCases": "test/blind-intent-case.json",
+    "blindIntentionTests": "test/offline/blind-intent-proof.test.ts",
+    "blindIntentionValidator": "scripts/check-blind-intent-proof.mjs"
+  },
+  "licenses": {
+    "project": "Owner decision pending; no project open-source license assigned.",
+    "noticePolicy": "Installed third-party package directories retain their actual license notices. Exact direct pins and resolved production closure below are read from package-lock.json and installed package metadata/license files; empty notice lists mean no top-level notice file was available. Names, versions, license identifiers and notice hashes are preserved; this inventory grants no project license.",
+    "direct": [
+      {
+        "path": "node_modules/@google/genai",
+        "name": "@google/genai",
+        "version": "2.27.0",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@google/genai/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ],
+        "scope": "production"
+      },
+      {
+        "path": "node_modules/@modelcontextprotocol/sdk",
+        "name": "@modelcontextprotocol/sdk",
+        "version": "1.32.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@modelcontextprotocol/sdk/LICENSE",
+            "sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+          }
+        ],
+        "scope": "production"
+      },
+      {
+        "path": "node_modules/@types/node",
+        "name": "@types/node",
+        "version": "22.20.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@types/node/LICENSE",
+            "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+          }
+        ],
+        "scope": "development"
+      },
+      {
+        "path": "node_modules/fastify",
+        "name": "fastify",
+        "version": "5.12.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fastify/LICENSE",
+            "sha256": "23c91863859171455a536380991b4160fee4e19e2d8dc353ecf7143cc4e53ca2"
+          }
+        ],
+        "scope": "production"
+      },
+      {
+        "path": "node_modules/google-auth-library",
+        "name": "google-auth-library",
+        "version": "10.9.1",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/google-auth-library/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ],
+        "scope": "production"
+      },
+      {
+        "path": "node_modules/typescript",
+        "name": "typescript",
+        "version": "6.0.3",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/typescript/LICENSE.txt",
+            "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+          }
+        ],
+        "scope": "development"
+      },
+      {
+        "path": "node_modules/zod",
+        "name": "zod",
+        "version": "4.6.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/zod/LICENSE",
+            "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+          }
+        ],
+        "scope": "production"
+      }
+    ],
+    "production": [
+      {
+        "path": "node_modules/@fastify/ajv-compiler",
+        "name": "@fastify/ajv-compiler",
+        "version": "4.0.6",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/ajv-compiler/LICENSE",
+            "sha256": "e2d09f74a77005e85e9f9bd501e3b7599ccae19d918538461196dde42f7f1b97"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/ajv-compiler/node_modules/fast-uri",
+        "name": "fast-uri",
+        "version": "4.2.1",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/ajv-compiler/node_modules/fast-uri/LICENSE",
+            "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/error",
+        "name": "@fastify/error",
+        "version": "4.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/error/LICENSE",
+            "sha256": "ec99456b6f97f7e559790df166a17a2418dbdbf595d63502792a5ce661f1346c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/fast-json-stringify-compiler",
+        "name": "@fastify/fast-json-stringify-compiler",
+        "version": "5.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/fast-json-stringify-compiler/LICENSE",
+            "sha256": "e2d09f74a77005e85e9f9bd501e3b7599ccae19d918538461196dde42f7f1b97"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/forwarded",
+        "name": "@fastify/forwarded",
+        "version": "3.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/forwarded/LICENSE",
+            "sha256": "9276503e39bdcaad7d26993fae17b1e82d7ef65cf0fe0ae54c361bbc6cbc33da"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/merge-json-schemas",
+        "name": "@fastify/merge-json-schemas",
+        "version": "0.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/merge-json-schemas/LICENSE",
+            "sha256": "a5b84e79d71db5b8baef48e7c04143ca70117ee0a0b637133c02ab63a79fa6c7"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@fastify/proxy-addr",
+        "name": "@fastify/proxy-addr",
+        "version": "5.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@fastify/proxy-addr/LICENSE",
+            "sha256": "4ffb54af38f35ca8005893c382e19f3c3e919c499d50804c00d3c124bc6508f4"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@google/genai",
+        "name": "@google/genai",
+        "version": "2.27.0",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@google/genai/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@hono/node-server",
+        "name": "@hono/node-server",
+        "version": "2.1.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@hono/node-server/LICENSE",
+            "sha256": "6895190430d809c4c57a7582ecc2f99acbc2ea39a5dfad20262a41d5b3e91733"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@modelcontextprotocol/sdk",
+        "name": "@modelcontextprotocol/sdk",
+        "version": "1.32.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@modelcontextprotocol/sdk/LICENSE",
+            "sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@pinojs/redact",
+        "name": "@pinojs/redact",
+        "version": "0.4.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@pinojs/redact/LICENSE",
+            "sha256": "58d4023bfbed5fb530c5bb8d44641299eac62c850267415ec939cc42dea87e4f"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/aspromise",
+        "name": "@protobufjs/aspromise",
+        "version": "1.1.2",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/aspromise/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/base64",
+        "name": "@protobufjs/base64",
+        "version": "1.1.2",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/base64/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/codegen",
+        "name": "@protobufjs/codegen",
+        "version": "2.0.5",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/codegen/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/eventemitter",
+        "name": "@protobufjs/eventemitter",
+        "version": "1.1.1",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/eventemitter/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/fetch",
+        "name": "@protobufjs/fetch",
+        "version": "1.1.1",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/fetch/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/float",
+        "name": "@protobufjs/float",
+        "version": "1.0.2",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/float/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/path",
+        "name": "@protobufjs/path",
+        "version": "1.1.2",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/path/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/pool",
+        "name": "@protobufjs/pool",
+        "version": "1.1.0",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/pool/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@protobufjs/utf8",
+        "name": "@protobufjs/utf8",
+        "version": "1.1.2",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@protobufjs/utf8/LICENSE",
+            "sha256": "a67b34a24a5daddcce46aea68c5004e4442bbfb63690329fa607bf4de4269794"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@types/node",
+        "name": "@types/node",
+        "version": "22.20.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@types/node/LICENSE",
+            "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/@types/retry",
+        "name": "@types/retry",
+        "version": "0.12.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/@types/retry/LICENSE",
+            "sha256": "dea9265341829002e2c23a7372393eb2ed6e26085fb623f38a4ba0af833f30a6"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/abstract-logging",
+        "name": "abstract-logging",
+        "version": "2.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": []
+      },
+      {
+        "path": "node_modules/accepts",
+        "name": "accepts",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/accepts/LICENSE",
+            "sha256": "71f83c4c0621102a56d9853812777b85751bce7e9726f686f5b056c1f8a4b0e6"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/agent-base",
+        "name": "agent-base",
+        "version": "7.1.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/agent-base/LICENSE",
+            "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ajv",
+        "name": "ajv",
+        "version": "8.20.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ajv/LICENSE",
+            "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ajv-formats",
+        "name": "ajv-formats",
+        "version": "3.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ajv-formats/LICENSE",
+            "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/atomic-sleep",
+        "name": "atomic-sleep",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/atomic-sleep/LICENSE",
+            "sha256": "8d58741278b289a7f4b6dde2d6273fca7711b9849452c477933d1cccd03db1e7"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/avvio",
+        "name": "avvio",
+        "version": "9.3.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/avvio/LICENSE",
+            "sha256": "0dae13c0bb4d8c6dc73d7d49ddecdba7f56075975ffb2ee17050c63f3f3666f0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/base64-js",
+        "name": "base64-js",
+        "version": "1.5.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/base64-js/LICENSE",
+            "sha256": "5b37224c080cdcc97c871ada971c224e9926370fe74f11b539aa1cf9f3b1aca1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/bignumber.js",
+        "name": "bignumber.js",
+        "version": "9.3.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/bignumber.js/LICENCE.md",
+            "sha256": "def75ba75d6426f1c3f02addf8e175fbe6e0d8a82e541cbdffc16d2bd8fd7d6a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/body-parser",
+        "name": "body-parser",
+        "version": "2.3.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/body-parser/LICENSE",
+            "sha256": "23d466b1b134b415b66fa50c6526b4cf3e7b9258554da88d3abb371721e7ce68"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/body-parser/node_modules/content-type",
+        "name": "content-type",
+        "version": "2.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/body-parser/node_modules/content-type/LICENSE",
+            "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/buffer-equal-constant-time",
+        "name": "buffer-equal-constant-time",
+        "version": "1.0.1",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/buffer-equal-constant-time/LICENSE.txt",
+            "sha256": "751d0e80fb5c828f8c3de198cc760e1e05377e47c8263ab6ee2f10cdc19ba658"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/bytes",
+        "name": "bytes",
+        "version": "3.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/bytes/LICENSE",
+            "sha256": "e3b44af066615de2ea48d18d852d0762f18c0b2efcea714fa48a6f729d405b85"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/call-bind-apply-helpers",
+        "name": "call-bind-apply-helpers",
+        "version": "1.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/call-bind-apply-helpers/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/call-bound",
+        "name": "call-bound",
+        "version": "1.0.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/call-bound/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/content-disposition",
+        "name": "content-disposition",
+        "version": "1.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/content-disposition/LICENSE",
+            "sha256": "bd47ce7b88c7759630d1e2b9fcfa170a0f1fde522be09e13fb1581a79d090400"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/content-type",
+        "name": "content-type",
+        "version": "1.0.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/content-type/LICENSE",
+            "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/cookie",
+        "name": "cookie",
+        "version": "0.7.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/cookie/LICENSE",
+            "sha256": "c02110eedc16c7114f1a9bdc026c65626ce1d9c7e27fd51a8e0feee8a48a6858"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/cookie-signature",
+        "name": "cookie-signature",
+        "version": "1.2.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/cookie-signature/LICENSE",
+            "sha256": "0dd4e47333485760cf8c265db5a5e24ae8d7401064c6f2e19793ee81a5bef42f"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/cors",
+        "name": "cors",
+        "version": "2.8.6",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/cors/LICENSE",
+            "sha256": "1aa9a12863eefb583779b2ca0e5d73c610b6e6d07529ae0472721769a6ea0a32"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/cross-spawn",
+        "name": "cross-spawn",
+        "version": "7.0.6",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/cross-spawn/LICENSE",
+            "sha256": "aaa78451b6fecd1b9c4594c796c133c0e90cad100372ff8bc6de615e9ef9adf1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/data-uri-to-buffer",
+        "name": "data-uri-to-buffer",
+        "version": "4.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": []
+      },
+      {
+        "path": "node_modules/debug",
+        "name": "debug",
+        "version": "4.4.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/debug/LICENSE",
+            "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/depd",
+        "name": "depd",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/depd/LICENSE",
+            "sha256": "bd134b41da59e452fb5a1d366b660886f741c87c2bf9428e93764c419fbc40f5"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/dequal",
+        "name": "dequal",
+        "version": "2.0.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/dequal/license",
+            "sha256": "306fa513e39b23a6e8747520de761809d206b99800ef41907b530226574c59ae"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/dunder-proto",
+        "name": "dunder-proto",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/dunder-proto/LICENSE",
+            "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ecdsa-sig-formatter",
+        "name": "ecdsa-sig-formatter",
+        "version": "1.0.11",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ecdsa-sig-formatter/LICENSE",
+            "sha256": "50a6b24f8defc31a078aa9799a91d776f83948071574854f12473362aee74d0d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ee-first",
+        "name": "ee-first",
+        "version": "1.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ee-first/LICENSE",
+            "sha256": "965ef284f7f4c176842ec2e87fa13e79feed777d56d7a21a5a3b38f1bb6dc288"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/encodeurl",
+        "name": "encodeurl",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/encodeurl/LICENSE",
+            "sha256": "7585ea7bba616ccbbe43cb54ecb67956688c3c5641bb84f3099a652a73193afe"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/es-define-property",
+        "name": "es-define-property",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/es-define-property/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/es-errors",
+        "name": "es-errors",
+        "version": "1.3.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/es-errors/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/es-object-atoms",
+        "name": "es-object-atoms",
+        "version": "1.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/es-object-atoms/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/escape-html",
+        "name": "escape-html",
+        "version": "1.0.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/escape-html/LICENSE",
+            "sha256": "255aa557a1f55224ce522f311629c0bf20854740a67955cefd798fbd1d3d1ded"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/etag",
+        "name": "etag",
+        "version": "1.8.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/etag/LICENSE",
+            "sha256": "a7996721249a136fbcfc1c201bcb5f414f38a701d4a24f28abe65e16cfcce813"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/eventsource",
+        "name": "eventsource",
+        "version": "3.0.7",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/eventsource/LICENSE",
+            "sha256": "f683a72ffe6a9675b5507af22fe0f448d8c8de3da1e14f139d370a7e6a54a23e"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/eventsource-parser",
+        "name": "eventsource-parser",
+        "version": "3.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/eventsource-parser/LICENSE",
+            "sha256": "835eb611a23301b27115ca1be9f754c876e643ceb7fe63049c6b50609a1cafeb"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/express",
+        "name": "express",
+        "version": "5.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/express/LICENSE",
+            "sha256": "95a5762890e5c1c9808921cef095661fc482c5e1f0bba31446ac85595df6237c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/express-rate-limit",
+        "name": "express-rate-limit",
+        "version": "8.7.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/express-rate-limit/license",
+            "sha256": "a752c164b45840ef677e68c738aefabfd665ee9f112ada4538761301a97118b0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/extend",
+        "name": "extend",
+        "version": "3.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/extend/LICENSE",
+            "sha256": "97af7428f93afbab9bf79cd09254da1357161794f4255eb1b4599f04dd2d2e7c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-decode-uri-component",
+        "name": "fast-decode-uri-component",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-decode-uri-component/LICENSE",
+            "sha256": "27384b39baee4b476fb876670a75f282286fa55658bf0db14639621dd3801c9a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-deep-equal",
+        "name": "fast-deep-equal",
+        "version": "3.1.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-deep-equal/LICENSE",
+            "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-json-stringify",
+        "name": "fast-json-stringify",
+        "version": "7.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-json-stringify/LICENSE",
+            "sha256": "b08de5bb7b21f44a8358edf74febe50c75ef2a1e5470e06c8919eb934cba067c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-json-stringify/node_modules/fast-uri",
+        "name": "fast-uri",
+        "version": "4.2.1",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-json-stringify/node_modules/fast-uri/LICENSE",
+            "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-querystring",
+        "name": "fast-querystring",
+        "version": "1.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-querystring/LICENSE",
+            "sha256": "4f8cf48502224399442f7eadd8620d96ef18125f9beb4949c53084ab3b05a4d4"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fast-uri",
+        "name": "fast-uri",
+        "version": "3.1.8",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fast-uri/LICENSE",
+            "sha256": "b010b0dfdfdb23d7396e03b82cd4621fc9bb8f95d6b0aea70b9c24e12074c786"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fastify",
+        "name": "fastify",
+        "version": "5.12.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fastify/LICENSE",
+            "sha256": "23c91863859171455a536380991b4160fee4e19e2d8dc353ecf7143cc4e53ca2"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fastq",
+        "name": "fastq",
+        "version": "1.20.3",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fastq/LICENSE",
+            "sha256": "c3367f6d01a79d368fc4fbb41b3615fcd92f243d6597ab96742f6f976f9325af"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fetch-blob",
+        "name": "fetch-blob",
+        "version": "3.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fetch-blob/LICENSE",
+            "sha256": "a5edccac92c3aa845694dcfaa72a0c098c1ae40d5ca6a37e4e59d778cf8e29bd"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/finalhandler",
+        "name": "finalhandler",
+        "version": "2.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/finalhandler/LICENSE",
+            "sha256": "47dcccf62bf40469d23849b0b1dc8df9fc91bce219b880c638d4dc4596e6b5cf"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/find-my-way",
+        "name": "find-my-way",
+        "version": "9.9.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/find-my-way/LICENSE",
+            "sha256": "693f9539655acc1847add1ccd364312ba570bf8ce84706b6059e7e0b5ceb90e6"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/formdata-polyfill",
+        "name": "formdata-polyfill",
+        "version": "4.0.10",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/formdata-polyfill/LICENSE",
+            "sha256": "435a6437e47e5e479942255680e7fbe5f333d55234ada1c35f6115ca641d5bb4"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/forwarded",
+        "name": "forwarded",
+        "version": "0.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/forwarded/LICENSE",
+            "sha256": "bd47ce7b88c7759630d1e2b9fcfa170a0f1fde522be09e13fb1581a79d090400"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/fresh",
+        "name": "fresh",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/fresh/LICENSE",
+            "sha256": "a0ec0dab16b3666f24950f86d257930ac2ad475557b4bfe245620e0817d8a45d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/function-bind",
+        "name": "function-bind",
+        "version": "1.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/function-bind/LICENSE",
+            "sha256": "773e131a7684726005a7e4688a80b4620033bc08499bc1404dd1a1eb3bca725e"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/gaxios",
+        "name": "gaxios",
+        "version": "7.3.1",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/gaxios/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/gcp-metadata",
+        "name": "gcp-metadata",
+        "version": "8.1.2",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/gcp-metadata/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/get-intrinsic",
+        "name": "get-intrinsic",
+        "version": "1.3.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/get-intrinsic/LICENSE",
+            "sha256": "39c5ec504cf6bd5cd782a7c695828e09189df79f5d94840e4f08feb97b9fd416"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/get-proto",
+        "name": "get-proto",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/get-proto/LICENSE",
+            "sha256": "be46ce1e3b0479af9ce82d22b465a6d7d2ff084fca0aaf3d54172da2b5eb5781"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/google-auth-library",
+        "name": "google-auth-library",
+        "version": "10.9.1",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/google-auth-library/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/google-logging-utils",
+        "name": "google-logging-utils",
+        "version": "1.1.3",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/google-logging-utils/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/gopd",
+        "name": "gopd",
+        "version": "1.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/gopd/LICENSE",
+            "sha256": "d90bf0a089da4cf43d644ed240a0b3825dcdb705e64e38371d56995a4cc9e4c5"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/has-symbols",
+        "name": "has-symbols",
+        "version": "1.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/has-symbols/LICENSE",
+            "sha256": "206c1adcf206dc0031b11232f5b054ec5f1662407ab1ca415247921cab2068ab"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/hasown",
+        "name": "hasown",
+        "version": "2.0.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/hasown/LICENSE",
+            "sha256": "bf9b0d665be2a689851eea667ca9f42066ea1d903b38349c51e6a44b2577680a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/hono",
+        "name": "hono",
+        "version": "4.13.12",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/hono/LICENSE",
+            "sha256": "a6ab98e5c77b9070c443eaff2ff81034a6f8cc05a7524d5098eb0f24defa0115"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/http-errors",
+        "name": "http-errors",
+        "version": "2.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/http-errors/LICENSE",
+            "sha256": "dcb94ff9b1e037a847bc20589dc81a1066d041fd4c16deb18b0fa968c66cf395"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/https-proxy-agent",
+        "name": "https-proxy-agent",
+        "version": "7.0.6",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/https-proxy-agent/LICENSE",
+            "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/iconv-lite",
+        "name": "iconv-lite",
+        "version": "0.7.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/iconv-lite/LICENSE",
+            "sha256": "ac779f7314c74f232ef847ea86e714abe25cf6eeb5cc97b69451b74e2af6492d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/inherits",
+        "name": "inherits",
+        "version": "2.0.4",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/inherits/LICENSE",
+            "sha256": "5ffe28e7ade7d8f10d85d5337a73fd793dac5c462fb9a28fbf8c5046c7fbca3b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ip-address",
+        "name": "ip-address",
+        "version": "10.7.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ip-address/LICENSE",
+            "sha256": "f8d791359a50cbcac82c29cb7b0b1b889b28be76fdd35b8ee33f0f7c8704702a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ipaddr.js",
+        "name": "ipaddr.js",
+        "version": "2.5.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ipaddr.js/LICENSE",
+            "sha256": "62568a2d1337b77171ecca9db10579163446de1ba6151678e81f06cdc199971b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/is-promise",
+        "name": "is-promise",
+        "version": "4.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/is-promise/LICENSE",
+            "sha256": "44191656d296391e0ec97e32f5385f0d02b6f2992694082d22ea04ba0f66f9e4"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/isexe",
+        "name": "isexe",
+        "version": "2.0.0",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/isexe/LICENSE",
+            "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/jose",
+        "name": "jose",
+        "version": "6.2.12",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/jose/LICENSE.md",
+            "sha256": "8078b0829d6c3e9ecde2f003e1966e4cad3efc6e7a640efbab0313cc166b1af1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/json-bigint",
+        "name": "json-bigint",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/json-bigint/LICENSE",
+            "sha256": "def82c085d05e795fe6a9cb5b70c48e022212355afc0e91d4de047cade28df06"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/json-schema-ref-resolver",
+        "name": "json-schema-ref-resolver",
+        "version": "3.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/json-schema-ref-resolver/LICENSE",
+            "sha256": "0943b637252a9c6f1a062c77063aa58213ae93a18d5445f2fb77d1de7c60dc12"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/json-schema-traverse",
+        "name": "json-schema-traverse",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/json-schema-traverse/LICENSE",
+            "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/json-schema-typed",
+        "name": "json-schema-typed",
+        "version": "8.0.2",
+        "license": "BSD-2-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/json-schema-typed/LICENSE.md",
+            "sha256": "bbe87b573c12bda5baf18742117330efa177e0886b3b0a278dacf8f236e1e129"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/jwa",
+        "name": "jwa",
+        "version": "2.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/jwa/LICENSE",
+            "sha256": "3320319f8a5f42bc4254e65471eca7a5ea4dc8c883c4c24b4868e36b14890bcf"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/jws",
+        "name": "jws",
+        "version": "4.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/jws/LICENSE",
+            "sha256": "3320319f8a5f42bc4254e65471eca7a5ea4dc8c883c4c24b4868e36b14890bcf"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/light-my-request",
+        "name": "light-my-request",
+        "version": "6.6.0",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/light-my-request/LICENSE",
+            "sha256": "c59ffead4ccbc72ddc3258c23d608bc6f10cea5241038ca8d39cdd7d7e7667c9"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/light-my-request/node_modules/cookie",
+        "name": "cookie",
+        "version": "1.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/light-my-request/node_modules/cookie/LICENSE",
+            "sha256": "c02110eedc16c7114f1a9bdc026c65626ce1d9c7e27fd51a8e0feee8a48a6858"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/light-my-request/node_modules/process-warning",
+        "name": "process-warning",
+        "version": "4.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/light-my-request/node_modules/process-warning/LICENSE",
+            "sha256": "d9726abc9eff9496f3ecb5302e70756f310db24a01c7ddd20f541143bf5576ad"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/long",
+        "name": "long",
+        "version": "5.3.2",
+        "license": "Apache-2.0",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/long/LICENSE",
+            "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/math-intrinsics",
+        "name": "math-intrinsics",
+        "version": "1.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/math-intrinsics/LICENSE",
+            "sha256": "2b770a704c15de238c3f622b01b0044ddd60b49ee30608ea6991ebf19db7a7a1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/media-typer",
+        "name": "media-typer",
+        "version": "1.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/media-typer/LICENSE",
+            "sha256": "bd47ce7b88c7759630d1e2b9fcfa170a0f1fde522be09e13fb1581a79d090400"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/merge-descriptors",
+        "name": "merge-descriptors",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/merge-descriptors/license",
+            "sha256": "70b126abc64d7ea06e1243349073935caa16fa47a41a571773ccf0b350b1d574"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/mime-db",
+        "name": "mime-db",
+        "version": "1.54.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/mime-db/LICENSE",
+            "sha256": "cc1dfd4dafa27271e8212cd3b274eeb3f262e40a6fdab36ddc3f9696f706f58b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/mime-types",
+        "name": "mime-types",
+        "version": "3.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/mime-types/LICENSE",
+            "sha256": "71f83c4c0621102a56d9853812777b85751bce7e9726f686f5b056c1f8a4b0e6"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ms",
+        "name": "ms",
+        "version": "2.1.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ms/license.md",
+            "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/negotiator",
+        "name": "negotiator",
+        "version": "1.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/negotiator/LICENSE",
+            "sha256": "553d4d20029a24e315b428a1a54a9e109eaa340f2e958a4f50a92362c2c4070b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/negotiator/node_modules/content-type",
+        "name": "content-type",
+        "version": "2.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/negotiator/node_modules/content-type/LICENSE",
+            "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/node-domexception",
+        "name": "node-domexception",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/node-domexception/LICENSE",
+            "sha256": "8ec1386f7f078b0c7cd25341cd80f332df902371cda9f40c10ec2b4007b420b7"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/node-fetch",
+        "name": "node-fetch",
+        "version": "3.3.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/node-fetch/LICENSE.md",
+            "sha256": "3e2c11dcf3f17ab585baab8faba54772d7872f1c6e026022acd4b4006665efb0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/object-assign",
+        "name": "object-assign",
+        "version": "4.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/object-assign/license",
+            "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/object-inspect",
+        "name": "object-inspect",
+        "version": "1.13.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/object-inspect/LICENSE",
+            "sha256": "bd40cc437e28a3ad7bef2ad34e6b72e757b182e67bda1acadbab4ef0476f8232"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/on-exit-leak-free",
+        "name": "on-exit-leak-free",
+        "version": "2.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/on-exit-leak-free/LICENSE",
+            "sha256": "47404ffc18f1267832bc0623857871de5a3a93ebb19693f5e1b963af91fab54b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/on-finished",
+        "name": "on-finished",
+        "version": "2.4.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/on-finished/LICENSE",
+            "sha256": "8089bcc08845ec143e5761f4a101a65b8c792a0dedbfeeb90a15560c0b77f768"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/once",
+        "name": "once",
+        "version": "1.4.0",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/once/LICENSE",
+            "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/p-retry",
+        "name": "p-retry",
+        "version": "4.6.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/p-retry/license",
+            "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/parseurl",
+        "name": "parseurl",
+        "version": "1.3.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/parseurl/LICENSE",
+            "sha256": "11d017c3b9f1ee3f44caf7203035f0461d5b57e0db8ce1bc03a9af34fa7d3f6b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/path-key",
+        "name": "path-key",
+        "version": "3.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/path-key/license",
+            "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/path-to-regexp",
+        "name": "path-to-regexp",
+        "version": "8.4.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/path-to-regexp/LICENSE",
+            "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/pino",
+        "name": "pino",
+        "version": "10.4.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/pino/LICENSE",
+            "sha256": "03ebd87bfc3fde763e4d698939097903a202163f3365d92d2031a4e63e0c5487"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/pino-abstract-transport",
+        "name": "pino-abstract-transport",
+        "version": "3.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/pino-abstract-transport/LICENSE",
+            "sha256": "31f005ecff86a12a1351f4c2cb1133267c0b152546b08cd6fa4bdeb1943e00cd"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/pino-std-serializers",
+        "name": "pino-std-serializers",
+        "version": "7.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/pino-std-serializers/LICENSE",
+            "sha256": "6206673d24786f09656f7a480b7c50af289e9690963aaa135af5b626de5250df"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/pkce-challenge",
+        "name": "pkce-challenge",
+        "version": "5.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/pkce-challenge/LICENSE",
+            "sha256": "feb87a2e0c305de3464cc44077da5393c52d8ca6362d37427157d04ec6f4510d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/process-warning",
+        "name": "process-warning",
+        "version": "5.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/process-warning/LICENSE",
+            "sha256": "8d3c1dd501e056405ab56f4ad87b987070d55d1fe814616584ec2360045f9017"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/protobufjs",
+        "name": "protobufjs",
+        "version": "7.6.6",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/protobufjs/LICENSE",
+            "sha256": "49d6a1c9a623784c61c6cb70f773f3457faceb1914a13c8560a9823b7631950c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/proxy-addr",
+        "name": "proxy-addr",
+        "version": "2.0.8",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/proxy-addr/LICENSE",
+            "sha256": "a7996721249a136fbcfc1c201bcb5f414f38a701d4a24f28abe65e16cfcce813"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/proxy-addr/node_modules/ipaddr.js",
+        "name": "ipaddr.js",
+        "version": "1.9.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/proxy-addr/node_modules/ipaddr.js/LICENSE",
+            "sha256": "62568a2d1337b77171ecca9db10579163446de1ba6151678e81f06cdc199971b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/qs",
+        "name": "qs",
+        "version": "6.16.0",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/qs/LICENSE.md",
+            "sha256": "e7dc37bf662d7f786efcb46c545615e70c1daf458a38385521c63cf6607cdfe1"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/quick-format-unescaped",
+        "name": "quick-format-unescaped",
+        "version": "4.0.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/quick-format-unescaped/LICENSE",
+            "sha256": "5ac141bfc70bec8f40838502436bfcb85e3f4c24377e41b9ddef07bdd6aa51bc"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/range-parser",
+        "name": "range-parser",
+        "version": "1.3.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/range-parser/LICENSE",
+            "sha256": "f655e6291356ec0de7a8f0e69f294961a2cea86678ec94588be1e6a492e278ab"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/raw-body",
+        "name": "raw-body",
+        "version": "3.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/raw-body/LICENSE",
+            "sha256": "37876d7de8bdf5e5b9b58a697ebc34044624e493e6f49eff5c938e5226dcac6b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/real-require",
+        "name": "real-require",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/real-require/LICENSE.md",
+            "sha256": "cbf263504e800cf09f99962cce8497b76eef79c3526bca434b90c3ef4c17220d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/require-from-string",
+        "name": "require-from-string",
+        "version": "2.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/require-from-string/license",
+            "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ret",
+        "name": "ret",
+        "version": "0.5.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ret/LICENSE",
+            "sha256": "bfc2c678db20d806b3787956f607a1509da5fca45b4d40a97c671cbee737159d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/retry",
+        "name": "retry",
+        "version": "0.13.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/retry/License",
+            "sha256": "01ad164273e8e095abc9dbd1c21e194594a671af7d528cb43ee7b4c903ba7da3"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/reusify",
+        "name": "reusify",
+        "version": "1.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/reusify/LICENSE",
+            "sha256": "93a1506953b08ad4874e1cc0971a1d2ac387ca510da91e4d05e460a6c4966fa3"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/rfdc",
+        "name": "rfdc",
+        "version": "1.4.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/rfdc/LICENSE",
+            "sha256": "1ce941682a96c7b898ecd125d0f2e22319758ea6f3adbf498a65d649b0f3f7dd"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/router",
+        "name": "router",
+        "version": "2.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/router/LICENSE",
+            "sha256": "d0bca4e517157b7a6120c085f5fe43a35b90c095e3bbeb9e67f220c608506a16"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/safe-buffer",
+        "name": "safe-buffer",
+        "version": "5.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/safe-buffer/LICENSE",
+            "sha256": "c7cc929b57080f4b9d0c6cf57669f0463fc5b39906344dfc8d3bc43426b30eac"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/safe-regex2",
+        "name": "safe-regex2",
+        "version": "5.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/safe-regex2/LICENSE",
+            "sha256": "3871c31d0cc373951d836b8bb97275a2227f8af7464df7c51bc3f98769b87653"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/safe-stable-stringify",
+        "name": "safe-stable-stringify",
+        "version": "2.5.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/safe-stable-stringify/LICENSE",
+            "sha256": "3a6d6de49d284a36c5d271ef0e62eca1838cc460dd7630e3f2c347c8f5b2232a"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/safer-buffer",
+        "name": "safer-buffer",
+        "version": "2.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/safer-buffer/LICENSE",
+            "sha256": "4bc935e71be198c67ddf3c2b5fddb195f6edc182bfc155a96a6db61b44b494b9"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/secure-json-parse",
+        "name": "secure-json-parse",
+        "version": "4.1.0",
+        "license": "BSD-3-Clause",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/secure-json-parse/LICENSE",
+            "sha256": "d490035c46547ddc88330bc0b42fcd89eabfd66435c4291352d1b9b68d62c729"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/semver",
+        "name": "semver",
+        "version": "7.8.5",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/semver/LICENSE",
+            "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/send",
+        "name": "send",
+        "version": "1.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/send/LICENSE",
+            "sha256": "25a328069fe771f8ed5b6f983ed4b0e6c84b3312ac0f69b28c3d52dc277962c9"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/serve-static",
+        "name": "serve-static",
+        "version": "2.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/serve-static/LICENSE",
+            "sha256": "63b9a188d7d43e64b0558b7115255045b9fe20a5fc3ff483421cb899e7f52bcb"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/set-cookie-parser",
+        "name": "set-cookie-parser",
+        "version": "2.7.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/set-cookie-parser/LICENSE",
+            "sha256": "c5c6c5183a789d122f267c405f685037efb87e27fcde28ab1dd7378a2d2f5962"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/setprototypeof",
+        "name": "setprototypeof",
+        "version": "1.2.0",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/setprototypeof/LICENSE",
+            "sha256": "76d6d1ea0c268da37dd3c961b4fcfb23dee8417fff9e8786d4d44c585b781b69"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/shebang-command",
+        "name": "shebang-command",
+        "version": "2.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/shebang-command/license",
+            "sha256": "69dee148a2cc470554dfa7142e830662062394d0fe67cddd379aba90dc60d6b3"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/shebang-regex",
+        "name": "shebang-regex",
+        "version": "3.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/shebang-regex/license",
+            "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/side-channel",
+        "name": "side-channel",
+        "version": "1.1.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/side-channel/LICENSE",
+            "sha256": "cfc3f455254c0af0655cc3ff46a41ed644b67599f6043346169d285bf2b3cf3b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/side-channel-list",
+        "name": "side-channel-list",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/side-channel-list/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/side-channel-map",
+        "name": "side-channel-map",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/side-channel-map/LICENSE",
+            "sha256": "5e325595b4ea8cfec3802f545b1def5d7b73e4a5b8e9ba63e32a320f67732292"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/side-channel-weakmap",
+        "name": "side-channel-weakmap",
+        "version": "1.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/side-channel-weakmap/LICENSE",
+            "sha256": "cfc3f455254c0af0655cc3ff46a41ed644b67599f6043346169d285bf2b3cf3b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/sonic-boom",
+        "name": "sonic-boom",
+        "version": "4.2.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/sonic-boom/LICENSE",
+            "sha256": "db5c3795cb080810fed0380bf4d6adef3f81579e8ae3a867d3c2abab2329db9d"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/split2",
+        "name": "split2",
+        "version": "4.2.0",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/split2/LICENSE",
+            "sha256": "c372ef2fa1dfcb124ed807609751e75e3a009f108c5724916b489288fcb88a0c"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/statuses",
+        "name": "statuses",
+        "version": "2.0.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/statuses/LICENSE",
+            "sha256": "512cfa4d5e7a7569c7ae4dd95241cb6ae2aaf648ef9ebd080c01bd24868d26e9"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/thread-stream",
+        "name": "thread-stream",
+        "version": "4.2.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/thread-stream/LICENSE",
+            "sha256": "47404ffc18f1267832bc0623857871de5a3a93ebb19693f5e1b963af91fab54b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/toad-cache",
+        "name": "toad-cache",
+        "version": "3.7.4",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/toad-cache/LICENSE",
+            "sha256": "644304c533dee96438937c0bdcbb49897d80fd8df3be4573f3c57b9c2ca22587"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/toidentifier",
+        "name": "toidentifier",
+        "version": "1.0.1",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/toidentifier/LICENSE",
+            "sha256": "a832d679750e49ab433626ab196350b89964b60eb0d3edd3341887c7d5f4c128"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/type-is",
+        "name": "type-is",
+        "version": "2.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/type-is/LICENSE",
+            "sha256": "23d466b1b134b415b66fa50c6526b4cf3e7b9258554da88d3abb371721e7ce68"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/type-is/node_modules/content-type",
+        "name": "content-type",
+        "version": "2.1.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/type-is/node_modules/content-type/LICENSE",
+            "sha256": "257aed98914108e91a337912727b6a802eef218248507f74b76faffaff517a38"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/undici-types",
+        "name": "undici-types",
+        "version": "6.21.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/undici-types/LICENSE",
+            "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/unpipe",
+        "name": "unpipe",
+        "version": "1.0.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/unpipe/LICENSE",
+            "sha256": "1a526fbe8d8577f5a4b1c2821842b55b7c0e18862531c62ae4ce69c9b19b74b6"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/vary",
+        "name": "vary",
+        "version": "1.1.2",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/vary/LICENSE",
+            "sha256": "bd47ce7b88c7759630d1e2b9fcfa170a0f1fde522be09e13fb1581a79d090400"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/web-streams-polyfill",
+        "name": "web-streams-polyfill",
+        "version": "3.3.3",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/web-streams-polyfill/LICENSE",
+            "sha256": "81008a3fb78f69f3c4a72a9e005c8582342ab62864371b3ab8e1b6af9041e080"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/which",
+        "name": "which",
+        "version": "2.0.2",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/which/LICENSE",
+            "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/wrappy",
+        "name": "wrappy",
+        "version": "1.0.2",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/wrappy/LICENSE",
+            "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/ws",
+        "name": "ws",
+        "version": "8.22.0",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/ws/LICENSE",
+            "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/zod",
+        "name": "zod",
+        "version": "4.6.5",
+        "license": "MIT",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/zod/LICENSE",
+            "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+          }
+        ]
+      },
+      {
+        "path": "node_modules/zod-to-json-schema",
+        "name": "zod-to-json-schema",
+        "version": "3.25.2",
+        "license": "ISC",
+        "metadata": "installed",
+        "notices": [
+          {
+            "path": "node_modules/zod-to-json-schema/LICENSE",
+            "sha256": "80d3168ad2f70f6f5bb2ab22b23414707abf6f0a392034891481ae36a1a429d4"
+          }
+        ]
+      }
+    ]
+  },
+  "evidenceMatrix": [
+    {
+      "id": "CORE-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "src/host.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "CORE-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "fixture/server.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SAFE-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "test/offline/security.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SAFE-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/02-hybrid-threat-and-data-controls/VERIFICATION.md",
+        "test/offline/advisory.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SAFE-03",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/02-hybrid-threat-and-data-controls/VERIFICATION.md",
+        "test/offline/security.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SAFE-04",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "test/hosted/semantic.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SAFE-06",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/02-hybrid-threat-and-data-controls/VERIFICATION.md",
+        "test/phase02-cases.json"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "POL-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "config/policy.json"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "POL-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+        "test/offline/mutations.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "POL-03",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+        "test/offline/mutations.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "RES-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "src/model.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "RES-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+        "test/offline/mutations.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "RES-03",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+        "test/offline/faults.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "OBS-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        "test/offline/evidence.test.ts",
+        "src/contracts.ts",
+        "submission/evidence.json",
+        "submission/rehearsal.md"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "OBS-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/01-end-to-end-governed-workbench/VERIFICATION.md",
+        "public/app.js"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "OBS-03",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        "test/offline/evidence.test.ts",
+        "src/host.ts",
+        "submission/evidence.json",
+        "submission/rehearsal.md"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "TEST-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        "package.json",
+        "test/offline/delivery.test.ts",
+        "submission/evidence.json",
+        "submission/rehearsal.md"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "TEST-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/02-hybrid-threat-and-data-controls/VERIFICATION.md",
+        "test/phase02-cases.json"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "TEST-03",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        ".planning/phases/03-judge-policy-and-budget-mutations/VERIFICATION.md",
+        "test/offline/faults.test.ts"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SHIP-01",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        "README.md",
+        "package-lock.json",
+        "TEAM.md",
+        "submission/evidence.json",
+        "submission/rehearsal.md"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    },
+    {
+      "id": "SHIP-02",
+      "status": "accepted_prior_phase",
+      "evidence": [
+        "TEAM.md",
+        ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-PLAN.md",
+        "submission/evidence.json",
+        "submission/rehearsal.md"
+      ],
+      "limit": "Retained baseline acceptance at its dated source. Current Phase05 verification must reassess compatibility of this obligation against the changed source; no universal security or general accuracy claim."
+    }
+  ],
+  "retainedExperiment": {
+    "reference": ".planning/phases/02-hybrid-threat-and-data-controls/LIVE-EVIDENCE.md",
+    "recordHash": "61aabcd981d65752419716bce2f861b4ac0c7604dfc8ab23cbecbaf447b5cc7a",
+    "fixture": "test/phase02-cases.json",
+    "fixtureHash": "7dc46cfce6f22be10019773221dc81efc4a5e584731f5f96d0cd18db48913f28",
+    "collectedDate": "2026-10-03",
+    "checkerRunId": "74d457cf-a2f9-4833-b48a-9edfe6b05953",
+    "comparisonId": "f20864e3-3d04-415a-8b8d-32c28c68ade7",
+    "observations": [
+      {
+        "subject": "benign",
+        "classification": "benign",
+        "admission": "admitted",
+        "durationMs": 1350,
+        "attempts": 1
+      },
+      {
+        "subject": "active",
+        "classification": "active",
+        "admission": "quarantined",
+        "durationMs": 931,
+        "attempts": 1
+      },
+      {
+        "subject": "quoted",
+        "classification": "quoted",
+        "admission": "admitted",
+        "durationMs": 774,
+        "attempts": 1
+      },
+      {
+        "subject": "paraphrased",
+        "classification": "active",
+        "admission": "quarantined",
+        "durationMs": 974,
+        "attempts": 1
+      }
+    ],
+    "arms": [
+      {
+        "inspection": "on",
+        "runId": "220d24d5-bd53-479d-ae44-ebb95d6e344e",
+        "actorExposure": "whole advisory excluded",
+        "independentEffects": 1
+      },
+      {
+        "inspection": "off",
+        "runId": "9bf72fd5-772c-4655-8ef3-c839aa7a8e1a",
+        "actorExposure": "advisory admitted, 117 characters",
+        "independentEffects": 1
+      }
+    ],
+    "conclusion": "Source exposure changes; no observed downstream causal benefit.",
+    "inventory": [
+      {
+        "path": ".proofgate/evidence/phase02-ablation-220d24d5-bd53-479d-ae44-ebb95d6e344e.json",
+        "sha256": "e382fd9777f47b99cbbf85fd911194dbf9bc104c28d7df4d56e9e717431616b6"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-ablation-9bf72fd5-772c-4655-8ef3-c839aa7a8e1a.json",
+        "sha256": "a075614d46af41ee9a94b2e6461e38feb8c09e6a44a0b6d6c2eed62170d8bc72"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-ablation-pair-f20864e3-3d04-415a-8b8d-32c28c68ade7.json",
+        "sha256": "afec66e7294343629cacba736ae8119cdaa0b3f101aadb801280952b1fd22e46"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-semantic-74d457cf-a2f9-4833-b48a-9edfe6b05953-02.json",
+        "sha256": "45dc462a6f429d78cf562c9f0369e852e97996b9ce438508051190971996902d"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-semantic-74d457cf-a2f9-4833-b48a-9edfe6b05953-03.json",
+        "sha256": "e4ec622212cbee10a0eca14506a7c642fafd9490e3817552b07fb9f520459c97"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-semantic-74d457cf-a2f9-4833-b48a-9edfe6b05953-04.json",
+        "sha256": "4a8cad432990009a5653b1f0ec5f53db2ca28d8a8ec79c70b3e80a71a3efd9c4"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-semantic-74d457cf-a2f9-4833-b48a-9edfe6b05953-05.json",
+        "sha256": "a005f090e699388957af724125b41e9f9c20dc1f094fbe079ecb655947e0c8b2"
+      },
+      {
+        "path": ".proofgate/evidence/phase02-semantic-74d457cf-a2f9-4833-b48a-9edfe6b05953.json",
+        "sha256": "b95d6da7684478a6910623ac95dc6b86c590c32796645cf45bb26e91462db355"
+      },
+      {
+        "path": ".proofgate/phase02-root-reconciliation.json",
+        "sha256": "c0b602ff3ecd096aa3bfe91383a448bf3adae213586557d77b9922d54aa9ca44"
+      },
+      {
+        "path": ".proofgate/phase02-root-regression.tap",
+        "sha256": "cb4bf67a344e3e31e0c2d953b0bacbb34f15a3972e953d481336e67a38dfc33e"
+      }
+    ]
+  },
+  "limitations": [
+    "Synthetic data only; no production-data clearance or public deployment.",
+    "Preparation-only internal draft; no dependency installation, execution of tests or deployment is established by the save.",
+    "No observed downstream causal benefit: both actual Phase02 on/off actors succeeded safely; four subjects and two arms, one attempt each, do not establish general accuracy or universal injection prevention.",
+    "Unknown observed prompt/output/thought/cache usage remains unknown; unpriced tariff stays null. Enforced conservative request/response/output admission credits are separate from tokens and estimated money, with no invoice cap guarantee.",
+    "Single owner-funded hosted-only Vertex backend. Local compute/time admission is a conceptual extension; no second operational inference backend.",
+    "No reset on new run, no paid automatic replay/retry; unknown dispatched work stays charged. Preserve stores, epoch and independent effects.",
+    "Offline injected runner executions are separate from actual hosted observations; duplicate imported registrations are executions, not unique attacks.",
+    "Restart/resume recovery, distributed capacity/queue scheduling, general MCP federation and arbitrary shell remain deferred.",
+    "Strictness and controls.flow are reserved compatibility metadata, disabled in the UI; structural provenance/audiences/internal-only boundaries remain enforced.",
+    "Historical records without measured duration/hardware remain unavailable; final measurement spans state workload, samples, hardware and requested/returned model identities.",
+    "Retained release-baseline desktop/tablet/mobile, keyboard, reduced-motion and download observations remain dated baseline evidence. Current 60-day-result viewport/export checks were observed at 2026-10-04T02:22Z; native keyboard and emulated reduced-motion checks at 02:27Z. The earlier GSD CLI Tab failure and original 3/4 favicon-only assertion are preserved. Current Phase05 UI audit is verified18/24 with zero blockers; current source matches independent canonical verification. Nonblocking JSON-editing and narrow-screen discoverability limitations remain; private team/account/submission details remain owner-managed.",
+    "Source brief/rules scoring weights and PM timing conflicts remain disclosed in goldman/TASK-CONTRACT.md.",
+    "Hosted-only actor/checker differs from the brief local-model expectation. A local interpreter is not a local LLM; no organizer approval of this mismatch is established.",
+    "The public objective, admitted advisory, capability vocabulary and transport/task metadata are disclosed. The bounded proof does not protect arbitrary secrets pasted into public inputs or establish protection of all company know-how.",
+    "Two prepared public objectives and one previously unprepared 60-day/two-earliest intention have actual composition evidence. This is a bounded supported-grammar proof, not superiority over forms, spreadsheets or fixed workflows.",
+    "Three dated automated browser walkthroughs used a retained actual hosted method, not fresh inference or human rehearsal. Fresh saves added 12 tool attempts/3150704 credits after 24 proof attempts/6502120 credits; 36 total attempts exceeded the original combined 32 forecast.",
+    "The replacement 48.933333-second backup is a paced sequence of seven real current 60-day UI captures, not continuous recording, human demo timing or achieved latency. Playback establishes no new save. Root inspected all seven captures and full-size frames 1 and 7 at 2026-10-04T02:23:18.750Z; captured worktree identity remains provisional. Prior 49-second prepared-workflow backup metadata is retained historically.",
+    "New public-intention proof used 8 attempts / 2150481 credits (3 model, 1 authentication, 4 MCP) under a separate 12-attempt / 4325376-credit allocation, in the same epoch. Its dated checkpoint is 324 calls / 87971452 credits with 10 historical unknowns and 0 active runs; the earlier 36/32 forecast discrepancy is unchanged.",
+    "A separately allocated fourth automated walkthrough reused the actual 60-day intention method: 4 tool attempts / 1050011 credits, zero model/authentication attempts; private quote-only result $1200 then rule-changed $1060; dated 328 calls / 89021463 credits, 10 unknowns unchanged. The original three prepared-workflow walkthroughs and 36/32 forecast discrepancy remain separate."
+  ],
+  "demo": {
+    "scriptReference": "pitch.md",
+    "rehearsalReference": "rehearsal.md",
+    "backupReference": "backup.mp4",
+    "backupMode": "paced_real_capture_sequence",
+    "newSaveFromBackup": false
+  },
+  "delivery": {
+    "workingDemoTarget": "2026-10-04 08:00 Europe/Warsaw (target, not a completion claim)",
+    "rehearsalWindow": "2026-10-04 08:00–11:00 Europe/Warsaw",
+    "finalTarget": "2026-10-04 11:00 Europe/Warsaw (target; source PM/scoring conflicts retained)",
+    "externalActions": "Not authorized: publication, deployment, submission, messaging and Git push.",
+    "acceptance": "Accepted locally by root: regression, review, security/UI/source audit and canonical verification passed.",
+    "access": {
+      "teamContact": "Owner-managed private fields; no email or Discord invented.",
+      "judgeAccess": "Pending owner decision; no external deployment or organizer access established."
+    }
+  },
+  "pivotEvidenceMatrix": [
+    {
+      "id": "BLIND-01",
+      "status": "accepted_current_phase",
+      "evidence": [
+        "src/blind.ts",
+        "src/blind-evidence.ts",
+        "scripts/check-blind-proof.mjs",
+        "submission/evidence.json",
+        "scripts/check-blind-intent-proof.mjs",
+        "test/blind-intent-case.json"
+      ],
+      "limit": "Current all26 independent verification, clean review and verified security/UI support local acceptance. Evidence is limited to the synthetic supported grammar, actual recorded model composition, retained local rebind and independently confirmed internal effects; no universal privacy or comparative superiority claim."
+    },
+    {
+      "id": "BLIND-02",
+      "status": "accepted_current_phase",
+      "evidence": [
+        "src/blind.ts",
+        "src/blind-evidence.ts",
+        "scripts/check-blind-proof.mjs",
+        "submission/evidence.json",
+        "scripts/check-blind-intent-proof.mjs",
+        "test/blind-intent-case.json"
+      ],
+      "limit": "Current all26 independent verification, clean review and verified security/UI support local acceptance. Evidence is limited to the synthetic supported grammar, actual recorded model composition, retained local rebind and independently confirmed internal effects; no universal privacy or comparative superiority claim."
+    },
+    {
+      "id": "BLIND-03",
+      "status": "accepted_current_phase",
+      "evidence": [
+        "src/blind.ts",
+        "src/blind-evidence.ts",
+        "scripts/check-blind-proof.mjs",
+        "submission/evidence.json",
+        "scripts/check-blind-intent-proof.mjs",
+        "test/blind-intent-case.json"
+      ],
+      "limit": "Current all26 independent verification, clean review and verified security/UI support local acceptance. Evidence is limited to the synthetic supported grammar, actual recorded model composition, retained local rebind and independently confirmed internal effects; no universal privacy or comparative superiority claim."
+    },
+    {
+      "id": "BLIND-04",
+      "status": "accepted_current_phase",
+      "evidence": [
+        "src/blind.ts",
+        "src/blind-evidence.ts",
+        "scripts/check-blind-proof.mjs",
+        "submission/evidence.json",
+        "scripts/check-blind-intent-proof.mjs",
+        "test/blind-intent-case.json"
+      ],
+      "limit": "Current all26 independent verification, clean review and verified security/UI support local acceptance. Evidence is limited to the synthetic supported grammar, actual recorded model composition, retained local rebind and independently confirmed internal effects; no universal privacy or comparative superiority claim."
+    },
+    {
+      "id": "BLIND-05",
+      "status": "accepted_current_phase",
+      "evidence": [
+        "src/blind.ts",
+        "src/blind-evidence.ts",
+        "scripts/check-blind-proof.mjs",
+        "submission/evidence.json",
+        "scripts/check-blind-intent-proof.mjs",
+        "test/blind-intent-case.json"
+      ],
+      "limit": "Current all26 independent verification, clean review and verified security/UI support local acceptance. Evidence is limited to the synthetic supported grammar, actual recorded model composition, retained local rebind and independently confirmed internal effects; no universal privacy or comparative superiority claim."
+    }
+  ],
+  "currentAssessment": {
+    "status": "accepted_current_phase",
+    "requirements": [
+      "CORE-01",
+      "CORE-02",
+      "SAFE-01",
+      "SAFE-02",
+      "SAFE-03",
+      "SAFE-04",
+      "SAFE-06",
+      "POL-01",
+      "POL-02",
+      "POL-03",
+      "RES-01",
+      "RES-02",
+      "RES-03",
+      "OBS-01",
+      "OBS-02",
+      "OBS-03",
+      "TEST-01",
+      "TEST-02",
+      "TEST-03",
+      "SHIP-01",
+      "SHIP-02",
+      "BLIND-01",
+      "BLIND-02",
+      "BLIND-03",
+      "BLIND-04",
+      "BLIND-05"
+    ],
+    "acceptanceOwner": "Root integrator; current Phase05 canonical verification reassesses all 26 obligations.",
+    "publicIntention": "accepted_current_phase"
+  }
+}

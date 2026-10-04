@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "proofgate-blind-intent-case-1",
+  "id": "sixty-day-earliest-two",
+  "intention": "Within the next 60 days, prepare at most two renewal negotiations, earliest renewals first",
+  "taskId": "negotiation-savings",
+  "advisory": "Within the next 60 days, prepare at most two renewal negotiations, earliest renewals first. Use the approved local operations. Prepare an internal negotiation brief for employee review.",
+  "expectedChoice": {"windowDays": 60, "rankBy": "soonest", "takeCount": 2},
+  "initial": {
+    "records": [
+      {"id":"near","name":"Near Supplier","currentCents":100000,"quoteCents":105000,"dueDays":10,"servicePct":96},
+      {"id":"middle","name":"Middle Supplier","currentCents":200000,"quoteCents":214000,"dueDays":20,"servicePct":90},
+      {"id":"large","name":"Large Supplier","currentCents":500000,"quoteCents":580000,"dueDays":50,"servicePct":88},
+      {"id":"outside","name":"Outside Supplier","currentCents":700000,"quoteCents":800000,"dueDays":75,"servicePct":92}
+    ],
+    "rules":{"maxIncreaseBp":200,"minimumSavingCents":1000,"minimumServicePct":85}
+  },
+  "mutated": {
+    "records": [
+      {"id":"near","name":"Near Supplier","currentCents":100000,"quoteCents":101000,"dueDays":10,"servicePct":96},
+      {"id":"middle","name":"Middle Supplier","currentCents":200000,"quoteCents":244000,"dueDays":20,"servicePct":90},
+      {"id":"large","name":"Large Supplier","currentCents":500000,"quoteCents":590000,"dueDays":50,"servicePct":88},
+      {"id":"outside","name":"Outside Supplier","currentCents":700000,"quoteCents":800000,"dueDays":75,"servicePct":92}
+    ],
+    "rules":{"maxIncreaseBp":400,"minimumSavingCents":1000,"minimumServicePct":85}
+  },
+  "expectedInitial": [
+    {"id":"near","targetCents":102000,"savingCents":3000,"atRisk":false},
+    {"id":"middle","targetCents":204000,"savingCents":10000,"atRisk":false}
+  ],
+  "expectedMutated": [
+    {"id":"middle","targetCents":208000,"savingCents":36000,"atRisk":false},
+    {"id":"large","targetCents":520000,"savingCents":70000,"atRisk":false}
+  ],
+  "ceilings":{"newAttempts":12,"newCredits":4325376},
+  "limitations":["Synthetic local fixture and hosted-only actor/checker.","Potential annual savings, not achieved savings.","One new public intention; no comparison proving superiority over forms or spreadsheets.","Original proof and later rehearsal charges retain their historical exceeded combined forecast."]
+}

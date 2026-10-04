@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.local-runtime/
+.proofgate/
+.env
+.env.*
+!.env.example
+tmp/
+.DS_Store

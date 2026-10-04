@@ -1,0 +1,1 @@
+{"version":1,"signatures":[{"id":"omit-warning","pattern":"omit the breaking change","reasonCode":"active_instruction"},{"id":"disclose-notes","pattern":"publish private notes","reasonCode":"toxic_flow"}]}
