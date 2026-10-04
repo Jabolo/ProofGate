@@ -1,5 +1,7 @@
 # ProofGate
 
+**Try the judge demo:** [proofgate.michaljablonski.dev](https://proofgate.michaljablonski.dev/) — opens without an account, password or manual code. Shared synthetic data, actual retained AI method, local recomputation and governed internal save. See [access, limits and uptime](delivery/JUDGE-ACCESS.md).
+
 Give AI useful autonomy while retaining enforceable control over data, actions and spending. **Blind Workbench** is the primary supplier-renewal scene: AI composes approved public operations, then the owned host applies confidential synthetic contracts and private rules locally to produce a useful negotiation brief. A separate employee action saves the exact current brief through typed MCP with independent SQLite read-back. The existing ProofLib 1.0.0→2.0.0 release assistant remains available as supporting regression evidence. The original Phase05 actual hosted proof is complete and strictly validated; the separate public-intention proof also passed. Current acceptance is established by the canonical phase verification and review reports, separately from these bounded observations.
 
 Use Node **22.23.1**, npm **10.9.8**, and the exact installed/locked dependencies. A fresh builder runs:
