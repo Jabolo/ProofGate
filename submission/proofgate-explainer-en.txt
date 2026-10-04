@@ -1,0 +1,63 @@
+ProofGate judge explainer
+English local synthesized narration; burned-in captions.
+Narrated current nine-slide deck and retained historical evidence. No new application inference, rebind, export or save. Illustrative $100 action description; outcomes depend on current shared worksheet.
+
+THE IDEA
+ProofGate helps employees use AI while keeping company records and decision rules on a trusted company-controlled host.
+
+THE IDEA
+Our example is supplier renewals: who should we negotiate with, and what price should we ask for?
+
+1 / EMPLOYEE REQUEST
+The employee gives a public instruction: choose at most two renewals within sixty days, earliest first.
+
+1 / EMPLOYEE REQUEST
+The company keeps supplier quotes, current prices, service scores, and its decision rules in a separate private worksheet.
+
+2 / COMPOSE AI METHOD
+Compose AI method starts actual hosted AI. It chooses a plan from approved operations, rather than arbitrary code.
+
+2 / COMPOSE AI METHOD
+The plan selects renewals, applies price rules, ranks suppliers, limits the selection, and renders a brief.
+
+3 / PROOFGATE CHECKS
+ProofGate checks the public instruction and the proposed method using deterministic controls and enabled AI inspection.
+
+3 / PROOFGATE CHECKS
+Only an admitted method can execute locally. Policy, permissions, and a shared finite allowance govern the workflow.
+
+4 / PRIVATE DATA, USEFUL RESULT
+The local executor applies that method to private company data and produces selected suppliers and negotiation price ceilings.
+
+4 / PRIVATE DATA, USEFUL RESULT
+This recorded example changed from Near and Middle to Middle and Large. These amounts are potential opportunities, not achieved savings.
+
+5 / CHANGE DATA, REUSE METHOD
+On the website, Try a private quote change adds one hundred dollars, applies the records, and recomputes the same method locally.
+
+5 / CHANGE DATA, REUSE METHOD
+The brief can change without new provider attempts. Rebind locally performs this recomputation; it does not ask AI for another plan.
+
+6 / INSPECT THE BOUNDARY
+Open Actual planner and checker application bodies to inspect what the remote models received.
+
+6 / INSPECT THE BOUNDARY
+The captured bodies contain public intent and capabilities, but exclude private records, rule bodies, and the calculated brief.
+
+7 / CONTROL THE ACTION
+Attempt external export is a manual refusal test. Save exact internal brief is a separate employee-approved action.
+
+7 / CONTROL THE ACTION
+An independent read-back verifies the saved result. The slide shows earlier evidence; opening the website makes no new save.
+
+THE LIMITS
+This is a synthetic prototype with hosted AI and a trusted company host, not a universal security guarantee.
+
+THE LIMITS
+The website opens a retained AI method. Compose starts new inference; changing private data and rebinding reuse that method.
+
+AI METHOD / PRIVATE RESULT
+The employee asks. AI composes an approved method. Company facts determine the useful result.
+
+AI METHOD / PRIVATE RESULT
+ProofGate makes the boundary, budget, decisions, and permitted actions inspectable.
