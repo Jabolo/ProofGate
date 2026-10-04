@@ -1,11 +1,11 @@
 {
   "schemaVersion": "proofgate-delivery-evidence-3",
   "source": {
-    "revision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
-    "collectedAt": "2026-10-04T08:14:00Z",
+    "revision": "f1565c23ff185cb87587c6108be96dbec243b5ce",
+    "collectedAt": "2026-10-04T08:42:03.236Z",
     "coveredFiles": {
       ".planning/REQUIREMENTS.md": "eba4d6141ef110cbb00a4544c1c2196d440efe187d5a7586297d3bcbf31c5102",
-      "README.md": "d2da276c1fcc4ff9416ff607b1a9da6c79e1919f56227e2f3a200c3b3ca78f69",
+      "README.md": "c89cfa81b4a905896fd4f3206990bf8a663d00777f5cc05757d13c58a1ce3f5d",
       "config/policy.json": "f8ac9dbe74aab854dead6a38b46b6e1c141b1f39dbbbb3bf0cf6d450f8644398",
       "config/signatures.json": "d2b9e5c0727407a1c657ac08530e08fda3fd32f1cf0f52771ee2fd90fe6a4154",
       "delivery/README.md": "7d5d387aabe87823a315c6cbe4a160456f3fe5bf5c9f84f04a46b236a204367f",
@@ -18830,7 +18830,7 @@
   "captures": {
     "kind": "actual_authenticated_retained_run_get_only",
     "capturedAt": "2026-10-04T07:54:36.814Z",
-    "sourceRevision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
+    "sourceRevision": "f1565c23ff185cb87587c6108be96dbec243b5ce",
     "desktop": {
       "sha256": "18d7c8cb37cf53416339547b91f5a17f0208a9a533d584b59bcc5a939d87cd2a",
       "width": 1710,
@@ -18838,7 +18838,7 @@
     },
     "captureSource": {
       "scope": "frozen_local_source",
-      "revision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
+      "revision": "f1565c23ff185cb87587c6108be96dbec243b5ce",
       "uiHashes": {
         "public/app.js": "430c960f705fc98e21ccab397e6164da815e0a6fa8e00482034dfce892dd8749",
         "public/index.html": "9baccda222338aad091ab17641d64c4112e4fe150f92994b9fb5af1e8c02b8e6",
@@ -18862,7 +18862,7 @@
   },
   "browser": {
     "capturedAt": "2026-10-04T01:34:29.846Z",
-    "sourceRevision": "c7fcecc638f3af35c1562e960b4c025c4a937c58",
+    "sourceRevision": "f1565c23ff185cb87587c6108be96dbec243b5ce",
     "viewports": [
       {
         "label": "desktop",
@@ -18921,7 +18921,8 @@
       "These are dated actual retained-plan viewport captures, not fresh model composition.",
       "The original3/4 assertion remains preserved; sole favicon404 is explained from concrete network evidence. Current final keyboard/reduced-motion/download/UI audit and refreshed new-intention captures remain root gates.",
       "Current judge-story capture: 2026-10-04T07:54:36.814Z, source6b370219999590423716e793fc50c89d7b1b9fcd,1710x2791 authenticated GET-only rendering of a consistent retained-run SQLite snapshot. No new inference, rebind, save or human rehearsal. Existing browser assertions above retain their historical date and scope.",
-      "The GSD capture tool's Tab attempt did not advance focus and remains unverified. A separate native Chrome GET-only observation at2026-10-04T08:01:00.333Z recorded55Tab steps, Enter opening/closing the private-contract disclosure and nextTab focusblind-records;1440/768/390 labels and no horizontal overflow passed with0mutations. This is focused current evidence, not full accessibility certification. Historical assertions above keep their dates. The full image includes a separately owned deployment banner; this envelope does not establish deployment synchronization."
+      "The GSD capture tool's Tab attempt did not advance focus and remains unverified. A separate native Chrome GET-only observation at2026-10-04T08:01:00.333Z recorded55Tab steps, Enter opening/closing the private-contract disclosure and nextTab focusblind-records;1440/768/390 labels and no horizontal overflow passed with0mutations. This is focused current evidence, not full accessibility certification. Historical assertions above keep their dates. The full image includes a separately owned deployment banner; this envelope does not establish deployment synchronization.",
+      "README-only documentary identity rebind: source/UI/test bytes are unchanged from44c; retained capture and keyboard observation dates remain unchanged. No fresh browser actions or inference."
     ]
   },
   "backup": {

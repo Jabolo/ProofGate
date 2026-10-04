@@ -1,3 +1,59 @@
+# Current delivery — expanded README evidence reconciliation
+
+Source/documentary freeze `f1565c23ff185cb87587c6108be96dbec243b5ce`.
+Execution and fresh package gates completed **2026-10-04T08:47:52.662Z**.
+**COMPLETE — final independent Quick acceptance passed3/3 truths.** Root independently
+confirmed installed Quick/Phase04/Phase05 parsers returned passed; current clean
+REVIEW exists. Scope frozen. Exact bytes below are accepted locally for delivery.
+
+| Artifact | SHA256 |
+|---|---|
+| presentation.pdf | 412790f41a14d1277a70db528e5931f3dc7c36261e2124dca418eba4564a4862 |
+| presentation.pptx | 82bab80d6dced62feeb682c464b56186188d2ff8dc36eabf56214619cff6a6a7 |
+| submission/proofgate.zip | 3019b766665029c2c1fc7a19221db98c90caa324575e2ef535e8a0fa92969549 |
+| delivery/proofgate-source.zip | 46996e181d12cff37f08eaf7a47f064531c830159c8c37215f94a03bcc65e971 |
+
+The owner-approved expanded README structure, diagrams, team and access links are
+preserved. Independent review is clean for exact README
+`c89cfa81b4a905896fd4f3206990bf8a663d00777f5cc05757d13c58a1ce3f5d`.
+Corrections distinguish supported controls from broad security guarantees,
+single timing observations from promises, hash comparison from authenticated
+audit history, and fresh-clone setup from retained proof. Current public
+quote-only $1,060→$1,160 is separate from historical two-input $130→$1,060.
+The API example polls completion and checks current revision and independent save.
+
+Only README changed among the 32 covered implementation/source inputs.
+Phase04/05 were substantively reassessed; current canonical parsers passed and
+required reviews exist. Historical d3a acceptance remains scoped to its own bytes.
+All nine source/native PDF page images and all editable slide text are identical
+to accepted44c. Only source/capture-scope provenance in notes/metadata changed;
+historical proof/capture dates and substantive notes remain unchanged.
+No new capture, inference, rebind, save or human rehearsal is asserted.
+
+Source archive: 269 entries; manifest digest
+`8e25a902ed79eeef0a8955048ed80494cb3743be2255ce58981b42cc54d18e3d`.
+Exact source verification and strict presentation release passed, with unchanged
+validators and an exact allowlisted staging directory. Unrelated media retained.
+Fresh isolated extraction `.proofgate/readme-reconcile/fresh-wrhzFb` passed locked
+installation, build, **339/339 offline executions**, zero failures/skips, canonical
+Phase04/05, content and release. No inherited provider credentials or initial
+private runtime. Log SHA256
+`7bd315b7714e0d56fa8e7ab1bec06327f77928385e802dd0f71d699a4fe9ce15`;
+machine result `.proofgate/readme-reconcile/fresh-extraction.json`.
+Eight nested historical evidence sections remain unchanged. Prior accepted44c
+PDF/PPTX/ZIPs/receipt are preserved under `.proofgate/readme-reconcile/`.
+
+Limits remain: synthetic data, hosted models, trusted company host/employee,
+public intent/capabilities disclosed, narrow operation grammar, peripheral
+fixtures, no universal confidentiality/OS sandbox/achieved savings claim.
+Four automated walkthroughs and zero human rehearsals remain dated observations;
+the 48.933333-second backup is paced genuine captures, not continuous recording.
+Root performed no paid calls, deployment, publication, submission or push.
+The separately authorized deployment chat owns final publication/draft PDF sync.
+
+## Historical judge-story receipt (superseded artifact bytes)
+
+
 # ProofGate — current judge-story delivery receipt
 
 Source freeze44c57cde5aeab97ff9bd1eaef20bbde4221b10a3. Current execution/byte gates
