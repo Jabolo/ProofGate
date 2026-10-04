@@ -26,7 +26,8 @@ const family=resolvePresentationFont({fontFamily:"Arial"});
 const buildDir=path.join(workspaceDir,'.proofgate/presentation-build');
 const inputFile=process.env.PITCH_INPUT||path.join(workspaceDir,'.proofgate/phase05-delivery-input/pitch-input.json');
 const outName=process.env.PITCH_REVISION||new Date().toISOString().replace(/[:.]/g,'-');
-const previewOnly=false; // Final source always requires current actual intention evidence.
+const previewOnly=false; // Both draft and final require validated retained actual intention evidence.
+const draftOnly=process.env.PITCH_DRAFT==='true'; // Layout-only use; never declares a new capture or source acceptance.
 const RUNTIME_SOFFICE=process.env.RUNTIME_SOFFICE||'/Users/michaljablonski/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override/soffice';
 const colors={paper:'#F5F3EC',ink:'#102D3C',muted:'#465960',green:'#2D6B51',white:'#FFFFFF',red:'#923A35'};
 const presentation=Presentation.create({slideSize:{width:1280,height:720}});
@@ -44,7 +45,7 @@ function base(title,notes,dark=false){
  if(title)txt(s,title,64,44,1152,100,34,true,dark?colors.white:colors.ink);
  s.speakerNotes.textFrame.setText(notes);return s;
 }
-function note(source,text){return `${text}\n\nSources: ${source}${input?`\nActual original proof date: ${proof.generatedAt}.${intent?` New intention proof date: ${intent.generatedAt}.`:''} Browser capture date: ${input.capturedAt}. Source revision: ${input.sourceRevision}. Browser captures may show later local mutations of the retained actual hosted method, without new composition.`:''}\nDisclosure: Synthetic supplier-renewal prototype. Public objective/capability descriptions and transport metadata remain disclosed. Local host/employee access is trusted. Targets are potential outcomes, never achieved savings. Current package evidence does not establish production security or formal noninterference.`;}
+function note(source,text){return `${text}\n\nSources: ${source}${input?`\nRetained original proof date: ${proof.generatedAt}.${intent?` Retained intention proof date: ${intent.generatedAt}.`:''} Browser capture date: ${input.capturedAt}. Source revision: ${input.sourceRevision}. Capture scope: ${input.captureNotes||"retained GET-only observation; no new inference, rebind or save"}.`:''}\nDisclosure: Synthetic supplier-renewal prototype. Public objective/capability descriptions and transport metadata remain disclosed. Local host/employee access is trusted. Targets are potential outcomes, never achieved savings. Current package evidence does not establish production security or formal noninterference.`;}
 async function img(s,file,x,y,w,h,alt,crop){
  const sharp=requireRuntime('sharp');
  const bytes=crop?await sharp(file).extract(crop).png().toBuffer():await fs.readFile(file);s.images.add({blob:bytes,contentType:'image/png',fit:'contain',position:{left:x,top:y,width:w,height:h},alt});
@@ -87,100 +88,92 @@ if(!previewOnly){
  if(input.regression&&(!(input.regression.passed===input.regression.total)||input.regression.failed!==0||input.regression.skipped!==0))throw new Error('REGRESSION_CLAIM_INVALID');
 }
 
-// 1: minimal title. The five-word product title meets the <=5-word field limit.
+// Nine-slide incumbent style; public goal and useful private result lead.
 {
- const s=base('',note('.planning/PROJECT.md; .planning/phases/05-blind-workbench/05-CONTEXT.md; TEAM.md','Opening: supplier-renewal work should benefit from AI without giving the hosted models the confidential contract worksheet or private rule bodies.'),true);
+ const s=base('',note('.planning/PROJECT.md; TEAM.md','An employee needs to decide which supplier renewals to negotiate and what to ask for. ProofGate governs actual hosted AI composition, local private calculation and separately approved internal action.'),true);
  txt(s,'ProofGate: Public Plans, Private Results',64,88,1152,205,44,true,colors.white);
- txt(s,'AI supplies the method.\nThe company keeps its know-how.',64,327,1080,150,32,false,colors.white);
- txt(s,'Blind Workbench: supplier renewal with synthetic contracts',64,606,1000,40,18,false,'#CBDDD5');
+ txt(s,'Prepare the right supplier negotiations.\nKeep company facts and rules local.',64,327,1080,150,30,false,colors.white);
+ txt(s,'Blind Workbench · synthetic supplier contracts',64,606,1000,40,18,false,'#CBDDD5');
 }
-// 2: concrete business problem, with an actual worksheet capture in the final deck.
 {
- const s=base('Supplier renewal needs private know-how',note('src/blind.ts initialPrivate/executeRecipe; .planning/phases/05-blind-workbench/05-CONTEXT.md; current genuine worksheet capture','A proposed quote alone does not determine a negotiation target. The company applies its confidential price ceiling and service threshold locally. All contracts shown are synthetic.'));
- txt(s,'The quote changes.\nPrivate rules set\nthe negotiation target.',64,185,470,210,28,true);
- txt(s,'An employee needs a useful brief\nwithout giving a hosted model\nthe contract register or rule bodies.',64,431,455,145,20);
- if(!previewOnly)await img(s,assets.worksheet,640,158,548,460,'Genuine confidential rule excerpt and zero-attempt local rebind',{left:486,top:798,width:390,height:345});
- else txt(s,'Synthetic fixture example\nCurrent annual price  $120,000\nSupplier quote  $132,000\nPrivate increase ceiling  2%',566,190,630,265,26);
- txt(s,'Synthetic contracts. Negotiation targets are potential outcomes.',64,641,1152,36,17,false,colors.muted);
+ const s=base('Which suppliers should we negotiate with?',note('test/blind-intent-case.json; src/blind.ts; actual intention proof','The public request is within 60 days, at most two renewal negotiations, earliest renewals first. Private quotes, current prices and company thresholds decide which records qualify and what the negotiation brief says.'));
+ txt(s,'The employee asks',64,165,510,45,24,true,colors.green);
+ txt(s,'Within the next 60 days,\nprepare at most two renewals,\nearliest renewals first.',64,236,548,188,27,true);
+ txt(s,'The result should tell me who to contact\nand the price ceiling to negotiate.',64,481,548,118,21);
+ txt(s,'The company knows',692,165,524,45,24,true,colors.green);
+ txt(s,'Private supplier quotes and prices\nPrivate price and service rules\nWhich renewals meet those rules',692,236,524,188,24);
+ txt(s,'Those facts determine the selection\nand the useful brief, inside the host.',692,481,524,118,21);
+ txt(s,'Public intent is disclosed. The demonstrated records and rule bodies stay local. All records are synthetic.',64,640,1152,55,17,false,colors.muted);
 }
-if(!previewOnly){
- // 4: exact actual AI compositions, expressed as editable human-readable steps.
- if(intent){
-  const s=base('An employee intention changes the method',note('current validated new-intention proof; pre-registered test/blind-intent-case.json',`The exact public employee request was frozen before observing the model reply. Actual AI chose window60, rank soonest and limit2. The independent intention oracle expected different selected records from the two earlier prepared recipes. No superiority over forms or spreadsheets is claimed.`));
-  txt(s,'Within the next 60 days,\nprepare at most two renewals,\nearliest renewals first.',64,170,562,178,26,true);
-  txt(s,'Actual AI choices\n60-day window\nEarliest renewal first\nAt most 2 renewals',64,390,548,204,23,true,colors.green);
-  txt(s,'Admitted operation method',676,165,540,45,24,true,colors.green);
-  txt(s,planText(intent.composition.recipe),676,233,540,346,22);
-  txt(s,'One previously unprepared public intention. Company records and rule bodies remain local.',64,631,1152,58,18,false,colors.muted);
- }
- // 5: one evidence image and a large supported zero-attempt delta.
- {
-  const r=objective.rebind;
-  const s=base('A private change changes the useful brief',note('current proof.objectives negotiation-savings rebind; current new-intention proof when supplied; actual current hero browser screenshot',intent?`Actual new-intention proof changes independently expected potential savings from ${money(sum(intent.rebind.actualBefore))} to ${money(sum(intent.rebind.actualAfter))} in synthetic USD. Private quotes and price rule change. Selected records change from Near/Middle to Middle/Large. Retained actual public bodies, constructors and charged ledger remain identical during the local rebind. Separate save charges are retained. This is a potential negotiation outcome.`:`The frozen original proof separately changes potential saving from ${money(sum(r.actualBefore))} to ${money(sum(r.actualAfter))}. The screenshot and large values show later automated walkthroughs 2 and 3 with the retained actual plan: private Acme quote $128,000 to $130,000 and potential saving $16,000 to $18,000. These are synthetic USD. This represents negotiation opportunity, not achieved saving. The actual captured public body arrays, same-objective planner construction and same-plan checker construction remain unchanged. Retained ledger calls and credits remain identical through this local rebind.`));
-  await img(s,assets.hero,64,180,520,415,intent?'Genuine new-intention local result and independent save':'Cropped genuine later automated walkthrough result, with potential savings and exact internal save',{left:912,top:238,width:470,height:670});
-  txt(s,intent?`${money(sum(intent.rebind.actualBefore))}\nto ${money(sum(intent.rebind.actualAfter))}`:'$16,000\nto $18,000',602,184,365,150,28,true,colors.green);
-  txt(s,intent?'Potential annual savings\nPrivate quotes and rule change\nNear + Middle\nto Middle + Large':'Potential annual savings\nPrivate quote changes\n$128,000 to $130,000',602,350,355,184,21);
-  txt(s,intent?'Same admitted actual method\nNew-intention proof, local rebind':'Same retained actual plan\nLater automated walkthroughs',602,542,355,71,17,false,colors.muted);
-  txt(s,'0',1000,175,216,100,62,true,colors.green);
-  txt(s,'new provider attempts\nin the local rebind',1002,307,214,165,18,true);
-  txt(s,'Changed brief\nSame method',1002,507,214,106,20,true);
-  txt(s,'The private quote or rule changes locally. The admitted AI method stays the same.',64,639,1152,48,18,false,colors.muted);
- }
-// 3: the explicitly assigned native editable factual diagram.
 {
- const s=base('Public AI method, local private execution',note('src/blind.ts; src/prompt-profiles.ts; src/model.ts; src/host.ts; fixture/blind-server.ts; fixture/blind-store.ts','The authenticated host sends only public objective/capabilities/admitted advisory or recipe to hosted stateless models. Advisory inspection precedes planner exposure. Whole recipe validation and semantic admission precede private access. A retained admitted recipe executes locally. A separate employee-approved typed MCP internal save uses independent SQLite read-back. All traffic shares current policy and the retained allowance.'));
- txt(s,'HOSTED MODELS RECEIVE APPROVED PUBLIC INPUTS',64,158,1152,32,17,true,colors.green);
- const a=dnode(s,'Public objective\nand capabilities',64,218,208,106);
- const b=dnode(s,'Advisory checker\nAI planner\nRecipe checker',321,206,241,130);
- const c=dnode(s,'Whole-plan gate\nCurrent policy',616,218,220,106);
+ const s=base('Actual AI composes an approved method',note('validated actual intention proof; test/blind-intent-case.json','The public request and independent expected selection were frozen before the model reply. Actual AI returned the 60-day / soonest / two method. It chooses approved operations and parameters; it does not invent an algorithm or run arbitrary code.'));
+ txt(s,'Public request + capabilities',64,165,530,70,23,true,colors.green);
+ txt(s,'AI chose\n60-day window\nEarliest renewal first\nAt most 2 renewals',64,264,498,232,27,true);
+ txt(s,'Admitted operations',680,165,536,46,24,true,colors.green);
+ txt(s,planText(intent.composition.recipe),680,253,536,318,22);
+ txt(s,'The host checks the whole method before private access. No arbitrary code, SQL or network operations.',64,632,1152,65,18,false,colors.muted);
+}
+{
+ const before=intent.rebind.actualBefore,after=intent.rebind.actualAfter;
+ const s=base('Private changes produce a different useful brief',note('validated actual intention rebind; genuine retained-run GET result capture','Independent expected results change from Near/Middle to Middle/Large after private quote and price-rule changes. The retained admitted method and captured application bodies stay unchanged. Rebind adds zero provider attempts. The current screenshot observes a retained result and historical save; it establishes no new inference, rebind or save.'));
+ txt(s,'Before the private change',64,167,512,44,23,true,colors.muted);
+ txt(s,'Near + Middle',64,227,512,70,32,true);
+ txt(s,'After quotes and the price rule change',64,334,570,48,22,true,colors.green);
+ txt(s,'Middle + Large',64,402,545,75,34,true,colors.green);
+ txt(s,'Negotiation ceilings\nMiddle: '+money(after[0].targetCents)+' · Large: '+money(after[1].targetCents),64,505,566,91,22);
+ txt(s,money(sum(before))+' → '+money(sum(after))+' potential annual opportunity · synthetic USD',64,635,1152,56,17,false,colors.muted);
+ await img(s,assets.hero,676,170,540,338,'Genuine retained result: Middle and Large supplier negotiation brief',input.screenshots.hero?.crop||{left:912,top:238,width:470,height:670});
+ txt(s,'0 new provider attempts during local rebind',676,539,540,75,24,true,colors.green);
+}
+{
+ const s=base('ProofGate controls each step',note('src/blind.ts; src/prompt-profiles.ts; src/model.ts; src/host.ts; fixture/blind-server.ts; fixture/blind-store.ts','The hosted checker inspects the advisory before planner exposure and the full method before private access. Deterministic schemas/dependencies/current policy AND actual AI semantic inspection must permit the work. The local host then applies private facts. A separate typed internal-save action uses independent read-back. Authentication, actor, checker and tools share a finite allowance.'));
+ txt(s,'PUBLIC INPUT → HOSTED AI → ADMITTED METHOD',64,158,1152,32,17,true,colors.green);
+ const a=dnode(s,'Public intent\nand capabilities',64,218,208,106);
+ const b=dnode(s,'Advisory checker\nAI planner\nMethod checker',321,206,241,130);
+ const c=dnode(s,'Deterministic AND\nactual AI checks',616,218,220,106,18);
  connect(s,a,b);connect(s,b,c);
- txt(s,'CONFIDENTIAL WORK STAYS IN THE LOCAL HOST',64,385,630,32,17,true,colors.green);
+ txt(s,'PRIVATE FACTS → LOCAL WORK',64,385,530,32,17,true,colors.green);
  const d=dnode(s,'Private records\nand rule bodies',64,458,208,106);
  const e=dnode(s,'Local executor\nUseful brief',616,458,220,106);
  const f=dnode(s,'Employee-approved\ninternal save\nIndependent read-back',903,443,313,137);
  connect(s,c,e,'bottom','top');connect(s,d,e);connect(s,e,f);
- txt(s,'Authenticated host. Shared policy and allowance. No arbitrary code or network operations.',64,631,1152,52,18,false,colors.muted);
+ txt(s,'Authenticated host · current policy · finite shared allowance · observable audit and export',64,631,1152,56,18,false,colors.muted);
 }
- // 6: genuine SDK-body evidence, kept distinct from transport metadata.
- {
-  const s=base('Actual inputs to the hosted models',note('current proof.observations[].evidence.captures; src/prompt-profiles.ts validatePublicApplicationBody; current payload browser capture','These are actual serialized generateContent application bodies captured at the metered hosted SDK dispatch boundary. Constructor specimens are separate and are not wire evidence. Public objective/capabilities/advisory/recipe remain disclosed. Headers/OAuth are omitted from the capture and transport metadata remains disclosed. This bounded inspection does not establish formal noninterference or conceal all metadata.'));
-  await img(s,assets.payload,64,160,720,450,'Cropped genuine browser capture of actual public model body at metered dispatch',input.screenshots.payload?.uncropped?null:(input.screenshots.payload?.crop||{left:65,top:0,width:410,height:740}));
-  txt(s,'Public application bodies',840,165,376,96,24,true,colors.green);
-  txt(s,'Approved objective\nCapability grammar\nAdmitted public advisory\nProposed operation recipe',840,283,376,180,20);
-  txt(s,'No private records, rule bodies\nor computed brief in the\ninspected application bodies.',840,494,376,125,20,true);
-  txt(s,'Public task/capability and transport metadata remain disclosed. The local host is trusted.',64,639,1152,54,17,false,colors.muted);
- }
- // 7: current semantic/control/save proof with no unobserved causal claim.
- {
-  const s=base('Controls stop a forbidden interaction',note('test/blind-cases.json; current actual proof observations/controls/objectives; https://invariantlabs.ai/blog/mcp-github-vulnerability; current genuine controls browser capture','A harmless synthetic adaptation of Invariant Labs’ GitHub MCP toxic flow tests advisory admission. One frozen observation each covers benign, active, quoted and signature-free paraphrase. Semantic quarantine removes the entire hostile advisory before actor exposure. Budget tightening and stale/manual external-save refusals are separately asserted with unchanged effect counts. A permitted current internal save matches one independently observed exact record for each objective. No causal downstream improvement follows merely from quarantine.'));
-  await img(s,assets.controls,64,178,670,422,'Cropped genuine browser capture of current editable control policy',input.screenshots.controls?.uncropped?null:(input.screenshots.controls?.crop||{left:58,top:940,width:1318,height:520}));
-  txt(s,'Benign advisory admitted\nHostile paraphrase quarantined',784,166,432,110,20,true,colors.green);
-  txt(s,'Budget blocks new dispatch\nStale save adds no effect\nManual external export refused',784,306,432,145,20);
-  txt(s,'Internal save: 1 exact\nindependently observed record',784,505,432,98,20,true);
-  txt(s,'Whole-source quarantine is an observed control decision. It does not prove downstream causal benefit.',64,639,1152,58,17,false,colors.muted);
- }
- // 8: measured evidence, task fidelity and visible material boundaries.
- {
-  const r=objective.rebind.before;
-  const identities=[...new Set(proof.observations.flatMap(o=>o.evidence.measurements.spans.filter(s=>s.returnedModel).map(s=>s.returnedModel)))];
-  const regression=input.regression&&!/final rerun required|pending/i.test(input.regression.sourceScope||'')?`${input.regression.passed}/${input.regression.total} offline runner checks pass`:'Current regression: awaiting final source check';
-  const s=base('Evidence and limits',note('current validated actual proof; integrator regression log; goldman/TASK-CONTRACT.md; .planning/PROJECT.md; package evidence.json','The Goldman task requires deterministic and actual semantic controls, editable policy/model/threshold/budget, realtime audit/export, positive/negative tests, architecture and measured telemetry. The package retains the exact source conflict: brief weights30/20/20/15/15, rules30/20/20/20/10. Rules permit English/Polish, stricter task page and owner choose English. Earlier cutoff is 4 October2026 11:00 Warsaw despite literal PM wording in other source text. The runtime uses owner-funded hosted Vertex synthetic inference with no local LLM. Current captured same-epoch ledger checkpoint: 328 calls and 89,021,463 admission credits, including 10 historical unknown attempts that remain charged and unreplayed. Tariff remains unknown/unpriced. Historical release on/off outcomes are separately dated; both actors succeeded safely and no downstream causal benefit was observed.'));
-  txt(s,'Observed proof',64,158,548,46,24,true,colors.green);
-  txt(s,intent?'4 original advisory cases, 1 each\n2 original compositions + 1 new intention\nPrivate rebinds add zero new attempts\nExact internal saves observed independently':'4 advisory cases, 1 observation each\n2 actual objective compositions\n2 private rebinds with zero new attempts\n2 exact independent internal saves',64,225,566,212,20);
-  txt(s,intent?`24 proof + 16 walkthrough + ${intent.newAttempts.length} intention = ${40+intent.newAttempts.length}\nOriginal combined 36 / 32 forecast exceeded\nModel inference: ${12+intent.newAttempts.filter(a=>['actor','checker'].includes(a.kind)).length} of ${40+intent.newAttempts.length} charged wires`:'24 proof attempts + 12 rehearsal wires = 36\nOriginal combined forecast: 32, exceeded\nModel inference: 12 of the 36 charged wires',64,468,566,124,18,true);
-  txt(s,'4 automated walkthroughs; no human rehearsal\n48.93s backup: seven paced UI captures\n10 historical unknowns charged; tariff unpriced',64,597,566,105,17,false,colors.muted);
-  txt(s,'Boundary and measurements',688,158,528,46,24,true);
-  txt(s,'Synthetic data, owner-funded hosted AI\nNo demonstrated local LLM backend\nTrusted local host and employee\nPotential savings, not achieved savings\nNo production or formal security proof',688,225,528,233,20);
-  txt(s,regression,688,488,528,76,18,true);
-  txt(s,intent?'One actual composition: 3.66s overall\nHosted spans: 3.65s, local: 1.61ms\nMCP save call: 10.95ms, separate':'Returned: Gemini 3.5 Flash / Flash-Lite\nModel, local and MCP spans stay separate',688,584,528,106,17,false,colors.muted);
- }
-}
-// 9: concise close with genuine team and no invented individual contributions.
 {
- const s=base('',note('TEAM.md; .planning/PROJECT.md; current proof and authentic browser observations','Closing: invite the judge to change a private quote or rule, rebind the retained admitted method, inspect the attempt delta and verify the exact internally saved brief. Team skills are owner-provided, not claims of individual code contributions. Genuine team: Michał Jabłoński, Karol Krawczyk, Kamil Krawczyk, Viktoriia Vinnykova.'),true);
- txt(s,'AI supplies the method.\nThe company keeps its know-how.',64,82,1152,210,42,true,colors.white);
- txt(s,'A judge can change a private quote or rule\nand inspect the useful result.',64,331,1152,114,26,false,colors.white);
- txt(s,'ProofGate',64,536,1110,45,24,true,'#CBDDD5');
+ const s=base('Inspect what the hosted models received',note('actual SDK dispatch captures; src/prompt-profiles.ts; dated payload capture','Actual serialized application bodies are captured at metered SDK dispatch. They are different from constructor specimens. The public task, capabilities, admitted advisory and recipe are disclosed. Headers/OAuth are omitted and transport metadata remains disclosed. Local host and employee access are trusted. No arbitrary-secret or formal confidentiality proof is claimed.'));
+ await img(s,assets.payload,64,160,640,450,'Historical genuine capture of actual public model application bodies',input.screenshots.payload?.uncropped?null:(input.screenshots.payload?.crop||{left:65,top:0,width:410,height:740}));
+ txt(s,'Disclosed public input',760,165,456,46,24,true,colors.green);
+ txt(s,'Employee intent and capabilities\nAdmitted public advisory\nProposed approved method',760,249,456,153,22);
+ txt(s,'The inspected bodies exclude\nprivate records, rule bodies\nand the computed brief.',760,463,456,137,22,true);
+ txt(s,'Task/capability and transport metadata remain disclosed. The local host and employee are trusted.',64,639,1152,56,17,false,colors.muted);
+}
+{
+ const s=base('An internal save must match the actual brief',note('actual intention proof; independent SQLite effects; current genuine controls capture','The permitted registered MCP save was observed previously and independently matched the exact content, artifact and parent/action identities. Current GET capture is observation only. Stale save and deliberately manual external export refusal are separate negative cases. A benign advisory was admitted and the whole hostile paraphrase quarantined before actor exposure. This does not establish downstream causal benefit.'));
+ txt(s,'Observed permitted action',64,163,566,47,24,true,colors.green);
+ txt(s,'1 exact internal record\nconfirmed independently',64,238,566,119,30,true);
+ txt(s,'Employee approves the current brief.\nAn independent reader checks its content\nand artifact / action identities.',64,402,566,151,21);
+ txt(s,'Stale save: no added effect\nManual external export: refused',64,591,566,81,20);
+ await img(s,assets.controls,680,173,536,266,'Historical genuine editable policy capture',input.screenshots.controls?.uncropped?null:(input.screenshots.controls?.crop||{left:58,top:940,width:1318,height:520}));
+ txt(s,'Policy can block new dispatch.\nHostile advisory quarantined as a whole.\nActor, checker and tools share one budget.',680,477,536,149,20,true);
+ txt(s,'Save evidence is retained and separately dated. A GET screenshot makes no new save.',680,637,536,56,16,false,colors.muted);
+}
+{
+ const regression=input.regression&&!/final rerun required|pending/i.test(input.regression.sourceScope||'')?input.regression.passed+'/'+input.regression.total+' offline checks in supplied evidence':'Current candidate regression: root-owned gate';
+ const accounting=input.accounting||{};
+ const s=base('Evidence you can inspect; limits you should know',note('validated original and intention proofs; input accounting; submission/evidence.json; goldman/TASK-CONTRACT.md','Retained evidence: four advisory cases, two prepared compositions and one previously unprepared intention; exact internal saves and zero-attempt local rebinds. Four automated walkthroughs, zero human rehearsals. Backup is 48.933333 seconds and seven paced genuine historical captures, not continuous recording or latency. Original proof24 plus earlier walkthrough12 equals36, exceeding original combined32 forecast. Separately approved intention adds8 wires (3 model,1 auth,4 MCP); fourth walkthrough adds4 MCP, giving48 wires and15 model inferences. Recorded same-epoch checkpoint328 calls/89021463 credits has10 historical charged unknowns. Observed tokens are separate from conservative admission credits; tariff remains unpriced. One intention composition observed3.66s overall, hosted3.65s and local1.61ms; separate MCP save span10.95ms. Those are single observations, not benchmarks. Historical release on/off actors both succeeded safely, so no downstream causal benefit was observed. Source scoring and PM timing conflicts remain in TASK-CONTRACT.'));
+ txt(s,'Retained actual evidence',64,166,568,46,24,true,colors.green);
+ txt(s,'Hosted AI returned the admitted methods\nLocal rebind changed the selected suppliers\nInternal effects matched independent records\nAudit, captures and measured spans inspectable',64,244,568,221,21);
+ txt(s,`${regression}\nUnknown dispatched work stays charged.`,64,497,568,76,19,true);
+ txt(s,'Four automated walkthroughs; no human rehearsal\nBackup: seven paced historical UI captures',64,603,568,83,17,false,colors.muted);
+ txt(s,'Material limits',704,166,512,46,24,true);
+ txt(s,'Synthetic data; trusted host and employee\nHosted-only AI; no demonstrated local LLM\nPeripheral ERP / email integrations mocked\nPotential opportunity, not achieved savings\nNo universal security or confidentiality proof',704,244,512,254,20);
+ txt(s,'Historical injection on/off test:\nno causal protection gain established.\nForecast overrun remains in notes and evidence.',704,552,512,135,18,false,colors.muted);
+}
+{
+ const s=base('',note('TEAM.md; current validated proof and retained browser observations','Invite the judge to inspect the public request, change a private quote or rule through the authorized local scene and inspect the selection/brief/provider delta. Fresh actions require root-approved run/admission; retained playback must be labeled. Genuine team names are owner-provided, not invented contribution claims.'),true);
+ txt(s,'Choose suppliers.\nPrepare a useful negotiation brief.',64,82,1152,210,42,true,colors.white);
+ txt(s,'AI composes the approved method.\nCompany facts and rules determine the result.',64,331,1152,114,26,false,colors.white);
+ txt(s,'ProofGate: Public Plans, Private Results',64,536,1110,45,24,true,'#CBDDD5');
  txt(s,'Michał Jabłoński    Karol Krawczyk\nKamil Krawczyk    Viktoriia Vinnykova',64,606,1152,72,18,false,colors.white);
 }
 
@@ -207,6 +200,6 @@ if(previewOnly){
  await fs.copyFile(produced,finalPdf);
  const {PDFDocument}=requireRuntime('pdf-lib');const pdf=await PDFDocument.load(await fs.readFile(finalPdf));
  if(pdf.getPageCount()!==9)throw new Error('NATIVE_PDF_SLIDE_COUNT');
- await fs.writeFile(path.join(buildDir,`handoff-${outName}.json`),JSON.stringify({status:'awaiting_individual_visual_review',sourceRevision:input.sourceRevision,capturedAt:input.capturedAt,proofGeneratedAt:proof.generatedAt,slideCount:slides.length,font:family,finalPath,finalPdf,receiptPath,renderPaths},null,2)+'\n');
- console.log(JSON.stringify({status:'awaiting_individual_visual_review',slideCount:slides.length,font:family,finalPath,finalPdf,receiptPath,renderDir}));
+ await fs.writeFile(path.join(buildDir,`handoff-${outName}.json`),JSON.stringify({status:draftOnly?'layout_draft_retained_input_only':'awaiting_individual_visual_review',sourceRevision:input.sourceRevision,capturedAt:input.capturedAt,proofGeneratedAt:proof.generatedAt,slideCount:slides.length,font:family,finalPath,finalPdf,receiptPath,renderPaths},null,2)+'\n');
+ console.log(JSON.stringify({status:draftOnly?'layout_draft_retained_input_only':'awaiting_individual_visual_review',slideCount:slides.length,font:family,finalPath,finalPdf,receiptPath,renderDir}));
 }

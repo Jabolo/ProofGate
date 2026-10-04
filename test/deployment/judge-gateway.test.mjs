@@ -133,3 +133,13 @@ test('artifact payload cannot substitute a different private run after admission
   assert.equal((await f.request('/api/blind/runs/'+retained)).status,200);
   const response=await f.request('/api/blind/artifacts/'+id);assert.equal(response.status,502);assert.equal((await response.json()).code,'JUDGE_ARTIFACT_MISMATCH');
 });
+
+test('abandoned judge lease expires after thirty seconds without resetting quotas',async t=>{
+  let clock=10000;const f=await fixture(t,null,{now:()=>clock});
+  assert.equal((await f.request('/api/blind/reset','POST',{})).status,200);
+  const other=randomUUID();clock+=29999;
+  assert.equal((await f.request('/api/blind/reset','POST',{}, {headers:{'x-proofgate-session':other}})).status,409);
+  clock+=2;
+  assert.equal((await f.request('/api/blind/reset','POST',{}, {headers:{'x-proofgate-session':other}})).status,200);
+  const state=JSON.parse(readFileSync(f.stateFile));assert.equal(state.compositions,0);assert.equal(state.saves,0);
+});

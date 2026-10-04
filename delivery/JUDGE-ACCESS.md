@@ -1,46 +1,48 @@
-# Public judge access
+# Judge demo — no setup required
 
-Open **https://proofgate.michaljablonski.dev/**. No account, password, invitation or manual code is required. The browser automatically enters the public guest demonstration and loads a retained method composed by actual hosted models.
+Open **https://proofgate.michaljablonski.dev/** on your own laptop or phone. No account, password, invitation, configuration, local installation or tunnel setup is required. The application runs on the team’s dedicated GCP host, independently of the owner’s laptop.
 
-1. Inspect the AI-selected method and its captured public application inputs.
-2. Change a synthetic private quote, apply it, then choose **Rebind locally**. Observe a changed brief with zero new provider attempts and unchanged retained application captures.
-3. Attempt an external export, then save the current brief internally and inspect independently confirmed read-back.
+The page automatically loads an **actual retained AI-composed method**, whose captured public model inputs are inspectable. A retained observation is labeled; opening the page is not a new AI inference.
 
-**Compose method** can start a new actual hosted composition within the shared allowance. Loading or rebinding the retained method does not invoke the provider. A retained observation is labeled; it is not a fresh AI inference.
+## A 60–90 second judge scene
 
-## Access boundary
+1. Inspect the selected suppliers and negotiation brief.
+2. Click **Try a private quote change (+$100)**, which performs the existing Apply and Rebind operations. The private result changes while the retained model captures remain identical, with zero new provider attempts.
+3. Try **Attempt external export**, then **Save exact internal brief** and inspect independent read-back.
 
-This is deliberately an **anonymous, shared synthetic laboratory**, not isolated company accounts. The public guest capability is automatically issued to visitors; it is not a secret password or proof of user identity. The actual owner bearer and provider credentials stay on the host. Original authenticated host controls and its cumulative allowance remain in force.
+**Compose AI method** starts new actual hosted inference within the shared allowance. Synthetic data and the fixture company endpoints are disclosed. The planner, enabled AI inspection, deterministic enforcement, local computation, typed MCP save and independent SQLite effects are actual implementation.
 
-Only the Blind workflow, approved run/artifact inspection and read-only policy/feed are exposed. Administrative writes, supporting release execution and unrelated historical runs are denied. One browser holds a three-minute editing lease; other browsers may inspect, but competing edits receive a busy response. This is coordination, not tenant isolation.
+## Send these links
 
-Deployment admission is fixed at **six shared composition dispatches and twelve shared save dispatches**, persisted before dispatch and retained across gateway restarts. The original cumulative host ledger additionally limits all actor/checker/tool work. Unknown dispatched work stays charged and blocks further public mutations pending owner review. Anyone discovering the URL can use the finite demo allowance; visits do not grant unlimited paid calls.
+- Working prototype: https://proofgate.michaljablonski.dev/
+- Source and project description: https://github.com/Jabolo/ProofGate
+- English presentation, nine slides: https://raw.githubusercontent.com/Jabolo/ProofGate/main/submission/presentation.pdf
+- Clearly labeled backup: https://raw.githubusercontent.com/Jabolo/ProofGate/main/submission/backup.mp4
+- HackTribe project, table **B25**: https://hackyeah2026.hacktribe.co/testnamexyz/
 
-Configured public guest expiry: **5 October 2026, 23:59:59 Europe/Warsaw**. This is a local configuration limit, not a recurring scheduler.
+The 49-second backup is a paced sequence of actual captured UI frames; it is not a continuous live recording, new inference or latency measurement. Slides and frozen evidence remain dated; the cloud migration is recorded separately.
 
-## Hosting and operation
+## Public demonstration boundary
 
-Cloudflare Tunnel terminates HTTPS and routes only to `127.0.0.1:3117`, the dedicated guest gateway; the owner host remains at `127.0.0.1:3100`. The existing Node/SQLite/MCP implementation runs on this computer. This is not a cloud-independent deployment: **keep this computer powered, awake and online, with the owner host running**.
+Deliberately **anonymous shared synthetic lab**. The browser automatically obtains a restricted demo capability; this is not employee identity authentication or tenant isolation. Owner bearer/provider credentials stay server-side. Only the Blind workflow and approved run/artifact inspection are exposed. Administrative writes, supporting release execution and unrelated historical runs are denied.
 
-The local supervisor restarts the dedicated gateway/connector after process exits and uses `caffeinate` to prevent idle system sleep. It does not restart or reset the original owner host, change its policy, rotate credentials, erase the ledger or establish recovery guarantees.
+One browser holds a 30-second editing lease; others can inspect, competing edits receive a busy response. Fixed deployment capacity is six shared composition dispatches and twelve shared save dispatches; both are persisted before dispatch. The original cumulative host allowance also applies. Unknown dispatches remain charged and require operator review. Limits never reset on visits or gateway restart.
 
-From the project directory:
+## Hosting and lifetime
+
+Dedicated **GCP Compute Engine e2-small / Debian12** in the owned hackathon-gdg-wroclaw project, with the same Node22.23.1, preserved SQLite ledger/private synthetic workspace, typed MCP and hosted model adapter. Cloudflare terminates HTTPS; its connector runs on this cloud VM. The app ports3100/3117 bind loopback; only owner SSH is admitted directly. No judge runs a connector or receives credentials.
+
+Unprivileged systemd services supervise host, gateway and connector. The laptop’s original host/gateway/connector are stopped to prevent duplicate live copies of the accounting epoch. Original local stores remain preserved. Do not restart that historical copy while cloud judging is active.
+
+Owner approved **up to USD5 of hosting, at most48hours**. Public demo expires **6 October2026,09:40 Europe/Warsaw**. The temporary VM and its temporary boot disk are configured for automatic deletion after48hours from initial start (approximately6October09:46Warsaw); original source/local backup files remain intact. Actual tariff invoice is not an invented measurement, and the existing AI allowance is separate from hosting cost.
+
+## Team operation — not judge instructions
 
 ```sh
-node scripts/judge-access.mjs status
-node scripts/judge-access.mjs start
-node scripts/judge-access.mjs stop
-node --test test/deployment/judge-gateway.test.mjs
+gcloud compute ssh proofgate-judges-20261004 --zone=europe-west1-b --project=hackathon-gdg-wroclaw
+sudo systemctl status proofgate-host proofgate-gateway proofgate-tunnel
 ```
 
-`start` requires the preserved private `.proofgate/deployment/runtime.json`, judge capability, tunnel token and owner-token file. Secrets, runtime state, PID files and logs remain inside ignored `.proofgate/`; they are not included in source or delivery packages. Never print or paste the tunnel token into a command argument. The connector reads it through `--token-file`.
+Reproduction scripts: scripts/gcp-judge-startup.sh and scripts/gcp-judge-services.sh. Private runtime/source transfer, tokens, ADC, SQLite snapshots and logs are excluded from Git and public packages. Startup refuses to restore a stale transfer over an installed cloud runtime. Cloud service restart preserves current stores and quotas; this is not general crash recovery or production high availability.
 
-If the original host exits, restore it with its **existing hosted database paths and allowance epoch**, not a new database. Inspect the existing local startup configuration; do not use a reset as a spending workaround. Expiry/unknown dispatch changes require owner review.
-
-Rollback without deleting data: stop the supervisor. To remove routing, remove only the newly created `proofgate.michaljablonski.dev` CNAME and `proofgate-judges` tunnel through the authorized Cloudflare account. Do not change nameservers or unrelated DNS records.
-
-## Domain choice
-
-The owner approved `.dev`, which is already an active zone on the accessible Cloudflare account. `.pl` uses Hostido nameservers and was not migrated. No unrelated service or DNS zone was changed.
-
-The frozen selection package and its historical evidence remain dated. This deployment is an additive delivery step; it does not change their measurements or claim a new human rehearsal.
+Rollback preserves data: stop the cloud connector. Reconcile the latest cloud ledger/effects with the preserved local copy before any local restore; never reuse a stale snapshot to regain allowance. DNS and the tunnel belong only to this demo; leave nameservers/unrelated services unchanged. The approved domain is .dev; .pl/Hostido was not migrated.

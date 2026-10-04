@@ -261,7 +261,7 @@ export function blindComparison(before,after){
 export function renderBlind(view,doc,{before=null,comparison=null}={}){
   const get=id=>doc.getElementById(id),text=(id,value)=>{get(id).textContent=value;};
   text('blind-state',view.state+' · '+(view.resultCurrent?'current local result':'stale / no current result')+(view.error?' · '+view.error.code:''));
-  text('blind-mode',({live:'Actual hosted model',offline:'Offline injected model',replay:'Recorded historical evidence'}[view.mode]||'Unknown mode')+' · Synthetic private worksheet');
+  text('blind-mode','Method source: '+({live:'Actual hosted model',offline:'Offline injected model',replay:'Recorded historical evidence'}[view.mode]||'Unknown mode')+' · Synthetic private worksheet');
   text('blind-recipe',view.recipe?JSON.stringify(view.recipe,null,2):'Waiting for an admitted operation plan.');
   const methodStep=step=>({
     select_due:'Renewals due within '+step.windowDays+' days',
@@ -272,8 +272,11 @@ export function renderBlind(view,doc,{before=null,comparison=null}={}){
     render:'local negotiation brief'
   }[step.op]);
   text('blind-method-summary',view.recipe?view.recipe.steps.map(methodStep).filter(Boolean).join(' → ')+'. Saving is a separate employee action.':'Waiting for an admitted method.');
+  const money=cents=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(cents/100);
   const brief=(result)=>result?[
-    element(doc,'p',result.summary),...result.rows.map(row=>{const n=element(doc,'article','', 'blind-row');n.append(element(doc,'h3',row.name),element(doc,'p','Potential saving '+number(row.savingCents)+' cents · negotiation ceiling '+number(row.targetCents)+' cents'),element(doc,'p',row.recommendation));return n;})
+    element(doc,'p',result.rows.length?'Selected suppliers · '+result.rows.map(row=>row.name).join(' / '):'No suppliers selected by this method and these private rules.','blind-selection'),
+    ...result.rows.map(row=>{const n=element(doc,'article','', 'blind-row');n.append(element(doc,'h3',row.name),element(doc,'p',row.recommendation,'blind-recommendation'),element(doc,'p','Negotiation ceiling '+money(row.targetCents)+' · potential annual saving '+money(row.savingCents),'blind-opportunity'));return n;}),
+    element(doc,'p',result.summary,'blind-result-summary')
   ]:[element(doc,'p','No current useful brief. Apply changes and rebind before saving.')];
   get('blind-result').replaceChildren(...brief(view.result));get('blind-before').replaceChildren(...(before?.result?brief(before.result):[element(doc,'p','A prior result appears after a local rebind.')]));
   const counts=blindAttempts(view);text('blind-counts','Observed dispatched attempts · auth '+counts.auth+' · planner '+counts.actor+' · checker '+counts.checker+' · tool '+counts.tool);

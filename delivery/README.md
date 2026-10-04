@@ -1,8 +1,30 @@
 # ProofGate portable local source
 
+Start with the supplier-renewal employee goal: choose which renewals to negotiate
+and prepare a useful brief. Actual hosted AI composes an approved public method;
+the company-controlled host applies private synthetic records and rules to select
+suppliers and calculate negotiation targets. Potential opportunity is not achieved
+savings. The root README and `submission/pitch.md` show the short scene and its
+inspectable control/effect evidence.
+
 This supplementary source archive makes the application rebuildable without a
 repository URL. It is separate from the strict presentation archive in
 `submission/`. Nothing here publishes, deploys or submits the project.
+
+The current story screenshot is a GET-only rendering of a consistent snapshot of
+retained actual run `360c040e-16a1-4f81-ac76-1e1ec4ef6195`, captured at
+2026-10-04T07:54:36.814Z against source
+`6b370219999590423716e793fc50c89d7b1b9fcd`. It shows the existing Middle/Large
+brief and earlier independent save; it performs no new inference, rebind or save.
+Actual composition, private-change proofs, four automated walkthroughs and the
+paced historical backup keep their original dates. A separate GET-only native
+Chrome observation at 2026-10-04T08:01:00.333Z exercised Tab traversal, Enter
+opening/closing the private-contract disclosure and focus reaching its records
+editor; widths1440/768/390 retained labels and no horizontal overflow. The earlier
+GSD browser Tab attempt was unverified. These are focused checks, not a full
+accessibility certification, and historical observations retain their dates.
+The full screenshot includes a separately owned judge-access banner. This local
+source task does not certify or synchronize an external deployment.
 
 The source snapshot contains the actual TypeScript application and fixture tools,
 HTML/JS workbench, locked dependency graph, all offline and opt-in hosted tests,
@@ -66,6 +88,14 @@ authorization to perform hosted inference. A retained recipe can be recomputed
 locally, but this source archive contains no live host database or saved session.
 The demonstrated local execution boundary is a company-controlled host; it is
 not a local LLM. No budget or database reset is authorized by this archive.
+
+Retain the scoped controls and their limits: public instructions are disclosed to
+the checker and admitted text to the planner; arbitrary pasted secrets are outside
+that protection boundary. Deterministic and enabled actual AI inspection both
+govern admission. Actor, checker, authentication and tools share a finite allowance;
+unknown dispatched work stays charged and is not replayed. Peripheral ERP/email
+integrations are mocked. Observed tokens, unpriced tariff estimates and admission
+credits remain distinct; the original forecast overrun stays disclosed.
 
 ## Root final packaging and independent proof
 

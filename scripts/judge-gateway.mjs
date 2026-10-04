@@ -127,7 +127,7 @@ export function createJudgeGateway({ownerToken, judgeCode, stateFile, retainedRu
           state.activeRun = null; persist();
         }
         if (admitted.kind === 'compose' && state.compositions >= 6 || admitted.kind === 'save' && state.saves >= 12) throw fail(429, 'JUDGE_QUOTA_EXHAUSTED');
-        state.lease = {session, until:now()+180000};
+        state.lease = {session, until:now()+30000};
         if (admitted.kind === 'compose') state.compositions++;
         if (admitted.kind === 'save') state.saves++;
         if (admitted.kind === 'compose' || admitted.kind === 'save') state.pendingDispatch = admitted.kind;
