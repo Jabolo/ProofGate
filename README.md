@@ -62,7 +62,7 @@ flowchart TD
 
     subgraph Independent_Storage["Independent SQLite Effect Store"]
         MCPServer -->|Write Brief| FixtureDB[("Internal Fixture SQLite")]
-        Gateway -.->|Independent Read-Back Reconciliation\n(Exact Content Hash Match)| FixtureDB
+        Gateway -.->|"Independent Read-Back Reconciliation<br/>Exact Content Hash Match"| FixtureDB
     end
 ```
 
@@ -139,7 +139,7 @@ flowchart TD
   subgraph Local_Execution["Local Execution & Governed Persistence"]
     RECIPE --> LOCAL[Company-Controlled Host Engine\nPrivate In-Memory Execution]
     LOCAL --> SINK_GATE{Policy Sink Rules}
-    SINK_GATE -->|External Sink Request| DENY[Deterministic Refusal:\nEXTERNAL_SINK_DENIED (0 Effects)]
+    SINK_GATE -->|External Sink Request| DENY["Deterministic Refusal:<br/>EXTERNAL_SINK_DENIED (0 Effects)"]
     SINK_GATE -->|Internal Save| MCP[MCP Subprocess\nStdio / Stripped Credentials]
     MCP --> DB[(Private SQLite Store)]
     DB --> RECON[Independent Read-Back Reconciliation:\nDirect SQLite Hash Verification]
