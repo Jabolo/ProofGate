@@ -1,10 +1,10 @@
 ---
 phase: 05-blind-workbench
-verified: 2026-10-04T03:23:14Z
+verified: 2026-10-04T08:14:00Z
 status: passed
 score: "12/12 must-haves verified"
-sourceRevision: "2c3b380306f66243305ca50d77be178b1d0b46b6"
-source_revision: "2c3b380306f66243305ca50d77be178b1d0b46b6"
+sourceRevision: "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3"
+source_revision: "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3"
 covered_files:
   - ".planning/REQUIREMENTS.md"
   - ".planning/phases/05-blind-workbench/05-01-PLAN.md"
@@ -44,8 +44,8 @@ covered_files:
   - "test/offline/blind-ui.test.ts"
   - "test/offline/delivery.test.ts"
   - "test/offline/source-package.test.ts"
-covered_digest: "v2:sha256:19955001efe64e278cbe935009104d31ee5e171a12e5e7c26dce72017dbd9984"
-source_digest: "v2:sha256:7951d6a932129611386f20eb3634379a259e44540927b1e18a3aba534c98ab7a"
+covered_digest: "v2:sha256:9b1e054d7a4e412d074c3b2073de544d73e639851f71e837c9c3a5c18cc83cd9"
+source_digest: "v2:sha256:282aabd79442a59bd8571a34090ced4efde46eba4b5504c5b79ee86479c8e7a4"
 requirements_verified: ["CORE-01", "CORE-02", "SAFE-01", "SAFE-02", "SAFE-03", "SAFE-04", "SAFE-06", "POL-01", "POL-02", "POL-03", "RES-01", "RES-02", "RES-03", "OBS-01", "OBS-02", "OBS-03", "TEST-01", "TEST-02", "TEST-03", "SHIP-01", "SHIP-02", "BLIND-01", "BLIND-02", "BLIND-03", "BLIND-04", "BLIND-05"]
 behavior_unverified: 0
 overrides_applied: 0
@@ -65,6 +65,84 @@ must_haves:
     - "Sanitized export contains actual policy/admission/attempt/measurement/effect projections and excludes private records/rules/results, credentials and raw verdict/reasoning."
     - "Current changed-source regression/review and independent source/security/UI/verification controls substantively cover all 26 obligations; historical baseline and capture provenance remain explicitly dated."
 ---
+
+## Visible unknown-work disclosure repair — 2026-10-04T08:14:00Z
+
+Independent reassessment of final source freeze `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`: the only covered-source delta from a98 is the slide8 text append “Unknown dispatched work stays charged.” The strict PDF content guard correctly rejected the previous final PDF for missing visible `unknown`; neither guard nor schema changed. The new native PDF page8 was independently viewed: the disclosure is readable and fits below the supplied339/339 regression line. Inspection records all other eight source-slide pixels and all notes unchanged,9 slides, clean first-party import and zero layout findings. This accurately preserves RES-01–03 no-replay/charged-unknown behavior and the historical ten unknowns; it introduces no runtime/model/control change or new proof. Current UI/capture bytes and historical evidence are unchanged. Final guarded export, release, exact archives and fresh extraction remain root Plan03 gates. Generator SHA256: `302c60913b63cfa21b6158f3fe477fca77157dda9433945c79ad4baa906326f1`. Earlier dated candidate/checkpoint claims below remain historical.
+
+
+## Current judge-story reassessment — 2026-10-04
+
+This section supersedes earlier uses of “current” source, UI and delivery identity in the historical appendices below. The bounded Quick261004-d3a Plans01–03 were read; root-frozen assessed source is `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`, including the explicitly reviewed slide8 historical-injection clarification and delivery instructions. Capture occurred against6b37021; its three UI files are byte-identical at this freeze. Covered/source fingerprints bind those actual bytes; they do not invent a new hosted observation or final archive receipt.
+
+### Goal and user-flow regression coverage
+
+| Employee/judge flow | Evidence independently checked | Verdict |
+| --- | --- | --- |
+| Give public intent; inspect admitted method | Existing public constructor/recipe contracts unchanged; actual original and60-day intention validators pass. Source and candidate show the approved60-day/soonest/two method, not a prepared fixture recast as inference. | VERIFIED |
+| Obtain selected suppliers and useful targets | `renderBlind` uses host-projected result rows, literal text nodes and integer cents/100; independently run exact-brief test verifies9,600/3,600/4,000USD, changed exclusions and actual host response. Current actual PNG shows Middle/Large and1,060USD potential opportunity. | VERIFIED |
+| Apply private drafts; rebind without models; save exactly | Named executed-setup test exercises separate draft preservation, disabled stale actions, Apply→Rebind, zero provider delta, exact independent save and artifact read-back. Host/controller/revision/action predicates are unchanged. | VERIFIED |
+| Inspect service risk and hostile text | Named service-risk test exercises85→99 private threshold, preserved other draft, literal hostile supplier name and zero provider delta. The real source establishes each relevant precondition; no fixture-only wiring substitute. | VERIFIED |
+| Inspect evidence and controls | All prior element IDs retained; disclosure, API handlers, status/live regions, filter/download, actual payload/specimen distinction, shared allowance and current-policy controls remain wired. Root native55Tab traversal and Enter open/close reach the private records editor;1440/768/390 labels/no-overflow are recorded with0mutations. | VERIFIED |
+| Inspect truthful English delivery | Nine current candidate native PDF pages independently viewed. Native PPTX has nine slides/notes, editable text on every slide and five native diagram connectors; supplied import/layout/integrity evidence inspected. Title five words; description359words; authentic current result crop readable. Guarded final promotion/exact package acceptance remain root Plan03 work. | VERIFIED |
+
+### Required artifacts, key links and real data flow
+
+| Artifact/link | Substantive/wiring evidence | Status |
+| --- | --- | --- |
+| `public/app.js` result renderer | Existing controller calls renderBlind with authenticated host state; current rows/recommendations/summary use `element`/`textContent`. Money presentation is cents/100 with two fraction digits. Empty selection/status defaults do not replace populated host results. | VERIFIED |
+| `public/index.html` / `public/styles.css` | Public instruction/model disclosure, private editors and existing action IDs retained; desktop two-column placement and700px one-column override remain explicit; native details stay focusable and editors labeled. | VERIFIED |
+| Browser→host→private brief | Existing authenticated workspace/run APIs→host-owned projected recipe/result/revisions→renderBlind→supplier/brief DOM. Production source unchanged beneath UI; two independent isolated host tests exercise this path. | FLOWING |
+| Host capture→model-body disclosure | Actual captured serialized bodies→view.captures→literal payload disclosure; public constructor specimens remain separately labeled. No generated static body replaces actual capture. | FLOWING |
+| Host attempts/effects→allowance/save display | Observed attempt/resource fields and exact acknowledged independent content predicate still drive displayed counts/save. Unknown/stale/dirty states cannot claim confirmed save. | FLOWING |
+| `submission/evidence.json`→strict delivery validator | Full strict envelope validated with current source snapshot, actual PNG and unchanged backup; original/intention proof validators run independently in verifier process. All eight nested historical sections compare unchanged to HEAD. | VERIFIED |
+| Generator→sanitized proof/screenshots→candidate | Original/intention validators run before authoring; source uses real reviewed screenshot crop and truthful dated notes. No provider, live DB or save is invoked by generator. | VERIFIED |
+
+### Compatibility with all26 accepted obligations
+
+This is a substantive assessment of how the changed renderer, markup, copy, generator and delivery instructions affect the retained obligations; it is not a new certification of unchanged backend behavior. The earlier complete source/effect assessment remains retained.
+
+| Obligations | Current delta assessment | Verdict |
+| --- | --- | --- |
+| CORE-01, SAFE-01 | Authenticated host, owned identities, strict schemas, bounded registered tools and credential handling unchanged; controller IDs remain available. | VERIFIED |
+| CORE-02 | Supporting release assistant and its existing actual evidence/effect contract retained; no install/test/deploy result is fabricated. | VERIFIED |
+| SAFE-02, SAFE-03 | Audience/provider/sink privacy logic unchanged; new visible values use literal text; public input disclosure explicitly excludes arbitrary pasted secrets. | VERIFIED |
+| SAFE-04, SAFE-06 | Deterministic AND actual semantic admission/quarantine paths unchanged. Original actual proof and historical on/off evidence remain dated; slide8 specifically limits no-causal-protection-gain to historical injection test. | VERIFIED |
+| POL-01, POL-02, POL-03 | Existing versioned policy/feed activation, model allowlist/threshold and invalidation contracts remain wired; reserved strictness/flow semantics stay honestly labeled. | VERIFIED |
+| RES-01, RES-02, RES-03 | Same shared finite ledger, one-action occupancy, bounds, no new-run reset and unknown no-replay predicates retained. Moving ledger into details changes placement, not admission/accounting. | VERIFIED |
+| OBS-01, OBS-02, OBS-03 | Useful selection/brief leads; actual mode, captures, attempts, policy and independent effects remain inspectable. Currency matches backend units; timing/token/credit/tariff boundaries retained. Current focused viewport/keyboard evidence is separately dated. | VERIFIED |
+| TEST-01, TEST-02, TEST-03 | Root current build/regression339/339,0failed/cancelled/skipped/todo independently inspected; two named host/UI behaviors independently rerun. Only currency assertions changed; independent draft, provider-delta and save/read-back checks remain. Actual hosted evidence stays distinct. | VERIFIED |
+| SHIP-01, SHIP-02 | Existing locked stack/setup/licenses remain; clearer local source opening preserves prerequisites and limits. Current candidate is nine readable English pages/editable PPTX; exact final assets/archives/fresh extraction are root Plan03 gates. | VERIFIED |
+| BLIND-01, BLIND-02 | Recipe/public-only construction, actual dispatch captures and independent60-day expected arithmetic remain unchanged. Near/Middle→Middle/Large and130→1,060USD potential opportunity are validated historical observations, not invented new work. | VERIFIED |
+| BLIND-03, BLIND-04 | Whole-method current-policy AND semantic authority, retained epoch, separate save, stale/unknown refusal and exact independent content/hash predicates unchanged. Strict actual proof validators pass with original charges. | VERIFIED |
+| BLIND-05 | Public goal/private company facts/useful brief are understandable in current actual capture and candidate deck; controls, limits, attempts and exact evidence remain reachable. Current root parser/package gates remain necessary. | VERIFIED |
+
+### Behavioral spot-checks and test-quality audit
+
+- `node --test --test-name-pattern="^executed Blind setup composes exact brief" dist/test/offline/blind-ui.test.js`: one named test PASS,0skipped;325.566625ms behavior,644.126958ms process. It asserts values, draft/state transitions, zero provider delta and exact independently confirmed save/read-back.
+- `node --test --test-name-pattern="^service risk rebind uses the private threshold, preserves other record draft and safely renders hostile names$" dist/test/offline/blind-ui.test.js`: one named test PASS,0skipped;255.986209ms behavior,586.606708ms process. It asserts changed private thresholds and literal hostile output.
+- An initial unmatched test-name filter returned1..0; it is explicitly excluded as behavioral evidence.
+- Root `/tmp/proofgate-story-regression.tap` independently inspected:339tests/339pass/0fail/0cancelled/0skipped/0todo,22400.502667ms; SHA256 `12941ae7de2bc2df0abc503cfba5caad9cc75eee35ca5bbef83d6963c3b1f979`. The verifier did not rerun the full suite.
+- `node --check public/app.js` and `node --check scripts/build-presentation.mjs` pass. No unreferenced TBD/FIXME/XXX markers or disabled requirement-linked tests were found in changed implementation/test files. Existing HTML example placeholders are intentional public-input guidance; populated real result flows were traced.
+- No circular expected-value generation was introduced; current UI tests retain independent value/behavior assertions. Temporary offline stores/injected models are explicitly offline evidence. No new paid call, original-store mutation, replay, server or full-suite run occurred in this lane.
+- Probe execution: not applicable; this presentation/UI delta declares no runnable migration/tooling probe.
+
+### Decision coverage and preserved limits
+
+Phase04 installed decision coverage:7/7 honored, none missing. Phase05 installed parser returns nonblocking `could-not-parse` for the original `- **D-01**:` format; no0/0 success is inferred. Manual D-01–D-09 coverage confirms supplier scene/release support, actual approved composition, two bounded objectives, public-only constructors/actual captures, AND admission/whole quarantine, incumbent shared epoch/no replay, exact separate save/rebind, incumbent stack and clear synthetic scene. No decision is removed or reopened.
+
+Current screenshot SHA256 `18d7c8cb37cf53416339547b91f5a17f0208a9a533d584b59bcc5a939d87cd2a`,1710×2791, captured2026-10-04T07:54:36.814Z: authenticated GET-only consistent SQLite snapshot of actual retained run360c040e-16a1-4f81-ac76-1e1ec4ef6195, model generation disabled/non-GET rejected. It shows historical exact-save status, not a new save. Source UI hashes are recorded in the strict envelope. Separately dated native Chrome observation2026-10-04T08:01:00.333Z resolves focused keyboard/viewport checks with0mutations; the earlier GSD Tab attempt remains unverified and is not rewritten as success. No full accessibility certification is claimed.
+
+Original actual composition/rebind/save proofs, three earlier walkthroughs, fourth walkthrough, backup and historical browser assertions remain unchanged. Four automated/zero human walkthroughs,48.933333s seven-paced-frame backup, ten charged unknowns, original36/32 forecast overrun, hosted-only/no local LLM, trusted company host/employee, synthetic data, peripheral mocks, potential not achieved savings and no universal security/noninterference claim remain explicit. Current full PNG includes a separately owned deployment banner; no deployment implementation or external synchronization is accepted here.
+
+### Advisory and remaining root gates
+
+No new-scope unevidenced blocker, observed regression or deferred product gap was established in this bounded source/claims reassessment. Native PowerPoint execution is not claimed; supplied first-party import/native PDF evidence and actual editable XML establish the disclosed portable format. Current source acceptance does not certify future bytes: guarded final deck promotion, strict content/release, exact manifests/replacement ZIPs, fresh source extraction/build/tests and final receipt remain root-owned Plan03 gates. Earlier historical “pending” notices below retain their original context and do not overrule this newest bounded reassessment.
+
+Inspected private qualified candidate: PPTX SHA256 `e0f6906cc99c75152ce364125ba56e577eee27c61a6bfaa05549fb6933ea2e46`; PDF `3c109808b46c9f8d9033fd853f4b10336d7e68074938e2c0991547760425e3bc`. Nine original native PDF pages and the changed qualified page8 were independently viewed; the other eight source-render identities remain unchanged. Qualified slide8 explicitly says “Historical injection on/off test: no causal protection gain established.” Layout/integrity/import evidence remains0findings/0warnings; original slide8 notes are byte-identical. This private candidate precedes guarded final source-a98 export/promotion; final byte identities are root-owned and must be checked afterward.
+
+Structured apply_patch was used because this runtime exposes no Write tool. No commit was made by the verifier.
+
 
 
 ## External-audit documentary follow-up — 4 October 2026

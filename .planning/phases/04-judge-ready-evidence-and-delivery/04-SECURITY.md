@@ -6,7 +6,91 @@ threats_open: 0
 asvs_level: 1
 register_authored_at_plan_time: true
 created: "2026-10-04"
+source_revision: "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3"
+current_delta_reviewed: 2026-10-04T08:14:00Z
+covered_digest: "v2:sha256:d4acd6f54f36b0bc04d2f0a697aec8e7e30d935e34cc2bc5bd1bd79aab808baa"
+source_digest: "v2:sha256:282aabd79442a59bd8571a34090ced4efde46eba4b5504c5b79ee86479c8e7a4"
+covered_files:
+  - ".planning/REQUIREMENTS.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-SUMMARY.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-SUMMARY.md"
+  - "README.md"
+  - "TEAM.md"
+  - "config/policy.json"
+  - "config/signatures.json"
+  - "delivery/README.md"
+  - "fixture/blind-server.ts"
+  - "fixture/blind-store.ts"
+  - "fixture/server.ts"
+  - "package-lock.json"
+  - "package.json"
+  - "public/app.js"
+  - "public/index.html"
+  - "public/styles.css"
+  - "scripts/build-presentation.mjs"
+  - "scripts/build-source-package.mjs"
+  - "scripts/check-blind-intent-proof.mjs"
+  - "scripts/check-blind-proof.mjs"
+  - "scripts/check-delivery.mjs"
+  - "src/blind-evidence.ts"
+  - "src/blind.ts"
+  - "src/contracts.ts"
+  - "src/host.ts"
+  - "src/model.ts"
+  - "src/prompt-profiles.ts"
+  - "test/blind-cases.json"
+  - "test/blind-intent-case.json"
+  - "test/cases.json"
+  - "test/hosted/ablation.test.ts"
+  - "test/hosted/blind-intent.test.ts"
+  - "test/hosted/blind.test.ts"
+  - "test/hosted/semantic.test.ts"
+  - "test/hosted/tracer.test.ts"
+  - "test/offline/advisory.test.ts"
+  - "test/offline/blind-evidence.test.ts"
+  - "test/offline/blind-intent-proof.test.ts"
+  - "test/offline/blind-proof.test.ts"
+  - "test/offline/blind-ui.test.ts"
+  - "test/offline/blind.test.ts"
+  - "test/offline/delivery.test.ts"
+  - "test/offline/evidence.test.ts"
+  - "test/offline/faults.test.ts"
+  - "test/offline/mutations.test.ts"
+  - "test/offline/phase02-harness.test.ts"
+  - "test/offline/review.test.ts"
+  - "test/offline/security.test.ts"
+  - "test/offline/source-package.test.ts"
+  - "test/offline/tracer.test.ts"
+  - "test/offline/transport.test.ts"
+  - "test/offline/workbench.test.ts"
+  - "test/phase02-cases.json"
+  - "tsconfig.json"
 ---
+
+## Visible unknown-work disclosure repair — 2026-10-04T08:14:00Z
+
+Independent reassessment of final source freeze `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`: the only covered-source delta from a98 is the slide8 text append “Unknown dispatched work stays charged.” The strict PDF content guard correctly rejected the previous final PDF for missing visible `unknown`; neither guard nor schema changed. The new native PDF page8 was independently viewed: the disclosure is readable and fits below the supplied339/339 regression line. Inspection records all other eight source-slide pixels and all notes unchanged,9 slides, clean first-party import and zero layout findings. This accurately preserves RES-01–03 no-replay/charged-unknown behavior and the historical ten unknowns; it introduces no runtime/model/control change or new proof. Current UI/capture bytes and historical evidence are unchanged. Final guarded export, release, exact archives and fresh extraction remain root Plan03 gates. Generator SHA256: `302c60913b63cfa21b6158f3fe477fca77157dda9433945c79ad4baa906326f1`. Earlier dated candidate/checkpoint claims below remain historical.
+
+
+## Current judge-story security reassessment — 2026-10-04T08:06:00Z
+
+Current assessed source `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3` replaces earlier current binding claims. Retained baseline threat closure/counts remain scoped to the implemented local prototype; this is no production certification or new paid security proof.
+
+| Quick delta threat | Substantive mitigation check | Verdict |
+| --- | --- | --- |
+| T-261004-d3a-06 disclosure | Actual public-input disclosure remains adjacent to the public editor; trusted company host/private synthetic scope and actual-versus-specimen bodies remain explicit. Full PNG/current capture/proof/backup dates are separate; strict envelope passes unchanged validator. | CLOSED within scope |
+| T-261004-d3a-07 tampering | New result content uses literal text nodes; named real host/UI tests pass private draft/rebind/exact save and hostile-name paths. Occupancy/revision/Stop/unknown predicates unchanged. | CLOSED within scope |
+| T-261004-d3a-08 repudiation | Actual current screenshot hash/dimensions/GET-only receipt inspected; original/intention proof validators pass; historical nested proofs/accounting unchanged. Nine candidate pages and qualified page8 inspected; exact final package acceptance still root-owned. | CLOSED within scope |
+| T-261004-d3a-09 privilege | No host route/schema/policy/credential or tool change. Existing deployment selectors preserved; separately owned judge/deployment code is outside this acceptance lane. | CLOSED within scope |
+| T-261004-d3a-10 denial of service | Existing finite allowance, bounded input/polling/occupancy and no reset/replay logic retained. Current capture/native keyboard observation records0mutations/no inference. | CLOSED within scope |
+| T-261004-d3a-SC supply chain | No install or dependency/lock change; incumbent pins retained. | CLOSED within scope |
+
+Independent quick source review is clean; current all26 compatibility/data-flow and named-test evidence are recorded in canonical VERIFICATION. Authentication/provider-clearance/audience/sink/semantic/core budget/save implementation is unchanged against prior accepted source. Current UI additions do not parse executable content. Unknown work remains charged and not replayed. No broad arbitrary-secret, formal confidentiality, new backend or restart guarantee is implied.
+
+Current digest follows substantive reassessment, not a blind hash refresh. Final guarded deck promotion/content/release/archive/fresh extraction/receipt remain root-owned. Native keyboard is a separately dated focused Chrome observation, not certification; historical actual control/model and backup evidence retain original dates. No live store/provider, deployment, Git or package action occurred in this lane.
+
 
 
 ## External-audit documentary follow-up — 4 October 2026

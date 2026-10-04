@@ -1,23 +1,23 @@
 {
   "schemaVersion": "proofgate-delivery-evidence-3",
   "source": {
-    "revision": "2c3b380306f66243305ca50d77be178b1d0b46b6",
-    "collectedAt": "2026-10-04T05:38:04.941Z",
+    "revision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
+    "collectedAt": "2026-10-04T08:14:00Z",
     "coveredFiles": {
       ".planning/REQUIREMENTS.md": "eba4d6141ef110cbb00a4544c1c2196d440efe187d5a7586297d3bcbf31c5102",
-      "README.md": "d546f6452c89fcf816ff9b5e3bd60b68e25db3ff58b9c401316133bb7af40e3f",
+      "README.md": "d2da276c1fcc4ff9416ff607b1a9da6c79e1919f56227e2f3a200c3b3ca78f69",
       "config/policy.json": "f8ac9dbe74aab854dead6a38b46b6e1c141b1f39dbbbb3bf0cf6d450f8644398",
       "config/signatures.json": "d2b9e5c0727407a1c657ac08530e08fda3fd32f1cf0f52771ee2fd90fe6a4154",
-      "delivery/README.md": "8306498ab8d6777c389205cb4c5a43a6fe2ddbd580fdc117f88206bcc89ef4f6",
+      "delivery/README.md": "7d5d387aabe87823a315c6cbe4a160456f3fe5bf5c9f84f04a46b236a204367f",
       "fixture/blind-server.ts": "e2993e19f6d8f729efd22fd30b6bc8a501eebfe59cc31140c7052c6432fd593d",
       "fixture/blind-store.ts": "503f09adf486e8f2c987938825f3474e8c7597b1858f04c1289631940f107cc5",
       "fixture/server.ts": "f0edf06f6bbc51bcba4ee7f471b1ed9330fbdb48afa1d19b003b8fc07fbbfc0e",
       "package-lock.json": "db874fbe5842cddadf7e5a2fa334c63c906f2673e23f478ccbbca6b4579a627a",
       "package.json": "90975b9ab058671b3a3b72cd4805389baa755d63a9f87dd349afb9ab558d0817",
-      "public/app.js": "506688ca6a8544d5fabecf7a12c62e9d65544809197ac6e7e716bd64e54017dc",
-      "public/index.html": "6e7c27d9f4d484cca01c7d16191e05833f7e45512ae7e7c1edf72bbd4f61beb4",
-      "public/styles.css": "42b894dd91f51914bc1423bf8eff34935d923311bbf91449d064c7c147bfdbf9",
-      "scripts/build-presentation.mjs": "0bfb8ec8cbd7945343b50c222affb0a16d905a21f785b177fc6aa146828e7474",
+      "public/app.js": "430c960f705fc98e21ccab397e6164da815e0a6fa8e00482034dfce892dd8749",
+      "public/index.html": "9baccda222338aad091ab17641d64c4112e4fe150f92994b9fb5af1e8c02b8e6",
+      "public/styles.css": "aed47510733d424140bce5b348a1abe93aba1186956324c3d72211ed9dc43319",
+      "scripts/build-presentation.mjs": "302c60913b63cfa21b6158f3fe477fca77157dda9433945c79ad4baa906326f1",
       "scripts/build-source-package.mjs": "4ecbd1a90c811eea587f206f6c0f9e4cb9f4aebe5b1818d4994af09bf8f5831e",
       "scripts/check-blind-intent-proof.mjs": "de85312496df9c05445734e30f978f16b3a4c8ee12b8d73da3b1ed2fdfd65d4a",
       "scripts/check-blind-proof.mjs": "c6a375c5886e220f891ebbc11f0f4e876f4cc64c274bed7be2f123ba403a3b6f",
@@ -33,7 +33,7 @@
       "test/hosted/blind-intent.test.ts": "1ab50a2ae9b286d426e66e150d3a51ed5db3a067618d8ace0cceb9ab9ad16a25",
       "test/hosted/blind.test.ts": "6a4e75f22de49bce24589e9a3c9af8032ca900fba02894f7017f56cac5e59d34",
       "test/offline/blind-intent-proof.test.ts": "978aa10cc163dc1462ed49b36684b8637fb366741dafef19de648a0c2910b0b4",
-      "test/offline/blind-ui.test.ts": "6d86b52587537afe3e9b179e3ae57994f8949de50b3ce09e93bd002a427e0eba",
+      "test/offline/blind-ui.test.ts": "2b121aae63fde45c23521e5d78eda05ac580cd5a2c50c3d2b5fb59cae9cbe414",
       "test/offline/delivery.test.ts": "9dcb2a6412c02e3d2900c092eb127dd9de6999c573860ecf2596cea3428ab5c0",
       "test/offline/source-package.test.ts": "05b1ffc29b0853b6a6a1c76c9f685f429d73b7737bce2c96a6c7e0e2c2ac6d28"
     },
@@ -18829,20 +18829,20 @@
   },
   "captures": {
     "kind": "actual_authenticated_retained_run_get_only",
-    "capturedAt": "2026-10-04T05:37:55.215Z",
-    "sourceRevision": "2c3b380306f66243305ca50d77be178b1d0b46b6",
+    "capturedAt": "2026-10-04T07:54:36.814Z",
+    "sourceRevision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
     "desktop": {
-      "sha256": "42e0ba98bbe1400677ee8f2c56ab56780ec8f68a98020287a15cc762cb5ed8cc",
-      "width": 1440,
-      "height": 1600
+      "sha256": "18d7c8cb37cf53416339547b91f5a17f0208a9a533d584b59bcc5a939d87cd2a",
+      "width": 1710,
+      "height": 2791
     },
     "captureSource": {
       "scope": "frozen_local_source",
-      "revision": "2c3b380306f66243305ca50d77be178b1d0b46b6",
+      "revision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
       "uiHashes": {
-        "public/app.js": "506688ca6a8544d5fabecf7a12c62e9d65544809197ac6e7e716bd64e54017dc",
-        "public/index.html": "6e7c27d9f4d484cca01c7d16191e05833f7e45512ae7e7c1edf72bbd4f61beb4",
-        "public/styles.css": "42b894dd91f51914bc1423bf8eff34935d923311bbf91449d064c7c147bfdbf9"
+        "public/app.js": "430c960f705fc98e21ccab397e6164da815e0a6fa8e00482034dfce892dd8749",
+        "public/index.html": "9baccda222338aad091ab17641d64c4112e4fe150f92994b9fb5af1e8c02b8e6",
+        "public/styles.css": "aed47510733d424140bce5b348a1abe93aba1186956324c3d72211ed9dc43319"
       },
       "runId": "360c040e-16a1-4f81-ac76-1e1ec4ef6195",
       "composition": "retained_actual_hosted",
@@ -18919,7 +18919,9 @@
     },
     "limitations": [
       "These are dated actual retained-plan viewport captures, not fresh model composition.",
-      "The original3/4 assertion remains preserved; sole favicon404 is explained from concrete network evidence. Current final keyboard/reduced-motion/download/UI audit and refreshed new-intention captures remain root gates."
+      "The original3/4 assertion remains preserved; sole favicon404 is explained from concrete network evidence. Current final keyboard/reduced-motion/download/UI audit and refreshed new-intention captures remain root gates.",
+      "Current judge-story capture: 2026-10-04T07:54:36.814Z, source6b370219999590423716e793fc50c89d7b1b9fcd,1710x2791 authenticated GET-only rendering of a consistent retained-run SQLite snapshot. No new inference, rebind, save or human rehearsal. Existing browser assertions above retain their historical date and scope.",
+      "The GSD capture tool's Tab attempt did not advance focus and remains unverified. A separate native Chrome GET-only observation at2026-10-04T08:01:00.333Z recorded55Tab steps, Enter opening/closing the private-contract disclosure and nextTab focusblind-records;1440/768/390 labels and no horizontal overflow passed with0mutations. This is focused current evidence, not full accessibility certification. Historical assertions above keep their dates. The full image includes a separately owned deployment banner; this envelope does not establish deployment synchronization."
     ]
   },
   "backup": {

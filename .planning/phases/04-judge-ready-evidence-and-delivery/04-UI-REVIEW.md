@@ -1,3 +1,92 @@
+---
+phase: 04-judge-ready-evidence-and-delivery
+status: verified
+score: 17
+maximum: 24
+blockers: 0
+source_revision: "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3"
+current_delta_reviewed: 2026-10-04T08:14:00Z
+covered_digest: "v2:sha256:d4acd6f54f36b0bc04d2f0a697aec8e7e30d935e34cc2bc5bd1bd79aab808baa"
+source_digest: "v2:sha256:282aabd79442a59bd8571a34090ced4efde46eba4b5504c5b79ee86479c8e7a4"
+covered_files:
+  - ".planning/REQUIREMENTS.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-SUMMARY.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-SUMMARY.md"
+  - "README.md"
+  - "TEAM.md"
+  - "config/policy.json"
+  - "config/signatures.json"
+  - "delivery/README.md"
+  - "fixture/blind-server.ts"
+  - "fixture/blind-store.ts"
+  - "fixture/server.ts"
+  - "package-lock.json"
+  - "package.json"
+  - "public/app.js"
+  - "public/index.html"
+  - "public/styles.css"
+  - "scripts/build-presentation.mjs"
+  - "scripts/build-source-package.mjs"
+  - "scripts/check-blind-intent-proof.mjs"
+  - "scripts/check-blind-proof.mjs"
+  - "scripts/check-delivery.mjs"
+  - "src/blind-evidence.ts"
+  - "src/blind.ts"
+  - "src/contracts.ts"
+  - "src/host.ts"
+  - "src/model.ts"
+  - "src/prompt-profiles.ts"
+  - "test/blind-cases.json"
+  - "test/blind-intent-case.json"
+  - "test/cases.json"
+  - "test/hosted/ablation.test.ts"
+  - "test/hosted/blind-intent.test.ts"
+  - "test/hosted/blind.test.ts"
+  - "test/hosted/semantic.test.ts"
+  - "test/hosted/tracer.test.ts"
+  - "test/offline/advisory.test.ts"
+  - "test/offline/blind-evidence.test.ts"
+  - "test/offline/blind-intent-proof.test.ts"
+  - "test/offline/blind-proof.test.ts"
+  - "test/offline/blind-ui.test.ts"
+  - "test/offline/blind.test.ts"
+  - "test/offline/delivery.test.ts"
+  - "test/offline/evidence.test.ts"
+  - "test/offline/faults.test.ts"
+  - "test/offline/mutations.test.ts"
+  - "test/offline/phase02-harness.test.ts"
+  - "test/offline/review.test.ts"
+  - "test/offline/security.test.ts"
+  - "test/offline/source-package.test.ts"
+  - "test/offline/tracer.test.ts"
+  - "test/offline/transport.test.ts"
+  - "test/offline/workbench.test.ts"
+  - "test/phase02-cases.json"
+  - "tsconfig.json"
+---
+
+## Visible unknown-work disclosure repair — 2026-10-04T08:14:00Z
+
+Independent reassessment of final source freeze `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`: the only covered-source delta from a98 is the slide8 text append “Unknown dispatched work stays charged.” The strict PDF content guard correctly rejected the previous final PDF for missing visible `unknown`; neither guard nor schema changed. The new native PDF page8 was independently viewed: the disclosure is readable and fits below the supplied339/339 regression line. Inspection records all other eight source-slide pixels and all notes unchanged,9 slides, clean first-party import and zero layout findings. This accurately preserves RES-01–03 no-replay/charged-unknown behavior and the historical ten unknowns; it introduces no runtime/model/control change or new proof. Current UI/capture bytes and historical evidence are unchanged. Final guarded export, release, exact archives and fresh extraction remain root Plan03 gates. Generator SHA256: `302c60913b63cfa21b6158f3fe477fca77157dda9433945c79ad4baa906326f1`. Earlier dated candidate/checkpoint claims below remain historical.
+
+
+## Current judge-story UI reassessment — 2026-10-04T08:06:00Z
+
+Current assessed source `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`; prior pillar scores/warnings remain dated baselines and are not silently rescored. The changed two-column employee scene puts public request/private company knowledge beside selected suppliers and a negotiation brief, with one-column source order at700px. Literal recommendations and correctly formatted USD lead; potential opportunity is expressly not achieved savings.
+
+Actual current1710×2791 PNG `18d7c8cb37cf53416339547b91f5a17f0208a9a533d584b59bcc5a939d87cd2a` was independently viewed. Capture2026-10-04T07:54:36.814Z against6b37021 has UI hashes byte-identical at the assessed freeze. It is authenticated GET-only observation of a consistent retained actual run snapshot, not new inference/rebind/save. Public disclosure remains visible; exact method/model-body/specimen and controls/allowance/evidence disclosures remain reachable.
+
+Root current native Chrome receipt2026-10-04T08:01:00.333Z records55Tab traversal, Enter opening/closing private-contract details, nextTab reachingblind-records,1440/768/390 labels/no horizontal overflow and0mutations. This independently resolves the focused current keyboard need. Earlier GSD browser Tab did not advance focus and remains an unverified tool observation. No exhaustive keyboard/screen-reader or accessibility certification is claimed.
+
+Two named real host/UI tests independently pass exact brief/private draft/rebind/provider delta/save/read-back and service-risk/private threshold/hostile literal name behaviors. Root339/339 current regression log inspected. All existing IDs, status/live regions, focus/reduced-motion rules, action occupancy/revision and stale/unknown states remain wired; no controls were orphaned by moving raw evidence into native details.
+
+All nine native candidate PDF pages and changed qualified page8 were independently viewed; selected supplier crop and captions readable. Qualified page8 accurately narrows causal-protection limits to historical injection on/off. Editable text and five native diagram connectors inspected; supplied first-party import/layout/integrity evidence is clean. Private candidate remains separate from guarded final export/promotion and exact release/package acceptance, which root must complete. No native PowerPoint execution or new human rehearsal is claimed.
+
+The full actual screenshot includes separately owned judge-access decoration; this UI report accepts the bounded core supplier scene, not deployment implementation/synchronization. Earlier actual proofs, historical viewport/keyboard assertions and paced backup remain separately dated. No new source/UI/capture/host/provider/deployment/Git action occurred in this audit lane.
+
+
 # Phase 04 — UI Review
 
 **Audited:** 2026-10-04

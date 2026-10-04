@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "proofgate-source-build-report-1",
+  "status": "draft",
+  "revision": "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3",
+  "sourceDigest": "c97b1b65498d50078020a7612b5066b4aed3fe962b168a43e374bd2b59e5174a",
+  "archiveSha256": "628432c9ac3d3071d1435f1fee57c5fcbecb0cd1437a2b010af752175fcda3bd",
+  "files": 269,
+  "archiveVerification": "source archive: passed",
+  "freshExtraction": "not run by builder; independent npm ci/build/offline proof required"
+}

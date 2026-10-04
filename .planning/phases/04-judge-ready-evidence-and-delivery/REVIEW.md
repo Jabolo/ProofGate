@@ -42,7 +42,86 @@ source_security_status: clean
 final_asset_review: complete
 resume_review_head: 140f024
 resume_review_scope: preserved-validator-lifecycle-test-and-corrected-rehearsal-archive
+source_revision: "44c57cde5aeab97ff9bd1eaef20bbde4221b10a3"
+current_delta_reviewed: 2026-10-04T08:14:00Z
+covered_digest: "v2:sha256:d4acd6f54f36b0bc04d2f0a697aec8e7e30d935e34cc2bc5bd1bd79aab808baa"
+source_digest: "v2:sha256:282aabd79442a59bd8571a34090ced4efde46eba4b5504c5b79ee86479c8e7a4"
+covered_files:
+  - ".planning/REQUIREMENTS.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-01-SUMMARY.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-PLAN.md"
+  - ".planning/phases/04-judge-ready-evidence-and-delivery/04-02-SUMMARY.md"
+  - "README.md"
+  - "TEAM.md"
+  - "config/policy.json"
+  - "config/signatures.json"
+  - "delivery/README.md"
+  - "fixture/blind-server.ts"
+  - "fixture/blind-store.ts"
+  - "fixture/server.ts"
+  - "package-lock.json"
+  - "package.json"
+  - "public/app.js"
+  - "public/index.html"
+  - "public/styles.css"
+  - "scripts/build-presentation.mjs"
+  - "scripts/build-source-package.mjs"
+  - "scripts/check-blind-intent-proof.mjs"
+  - "scripts/check-blind-proof.mjs"
+  - "scripts/check-delivery.mjs"
+  - "src/blind-evidence.ts"
+  - "src/blind.ts"
+  - "src/contracts.ts"
+  - "src/host.ts"
+  - "src/model.ts"
+  - "src/prompt-profiles.ts"
+  - "test/blind-cases.json"
+  - "test/blind-intent-case.json"
+  - "test/cases.json"
+  - "test/hosted/ablation.test.ts"
+  - "test/hosted/blind-intent.test.ts"
+  - "test/hosted/blind.test.ts"
+  - "test/hosted/semantic.test.ts"
+  - "test/hosted/tracer.test.ts"
+  - "test/offline/advisory.test.ts"
+  - "test/offline/blind-evidence.test.ts"
+  - "test/offline/blind-intent-proof.test.ts"
+  - "test/offline/blind-proof.test.ts"
+  - "test/offline/blind-ui.test.ts"
+  - "test/offline/blind.test.ts"
+  - "test/offline/delivery.test.ts"
+  - "test/offline/evidence.test.ts"
+  - "test/offline/faults.test.ts"
+  - "test/offline/mutations.test.ts"
+  - "test/offline/phase02-harness.test.ts"
+  - "test/offline/review.test.ts"
+  - "test/offline/security.test.ts"
+  - "test/offline/source-package.test.ts"
+  - "test/offline/tracer.test.ts"
+  - "test/offline/transport.test.ts"
+  - "test/offline/workbench.test.ts"
+  - "test/phase02-cases.json"
+  - "tsconfig.json"
 ---
+
+## Visible unknown-work disclosure repair — 2026-10-04T08:14:00Z
+
+Independent reassessment of final source freeze `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`: the only covered-source delta from a98 is the slide8 text append “Unknown dispatched work stays charged.” The strict PDF content guard correctly rejected the previous final PDF for missing visible `unknown`; neither guard nor schema changed. The new native PDF page8 was independently viewed: the disclosure is readable and fits below the supplied339/339 regression line. Inspection records all other eight source-slide pixels and all notes unchanged,9 slides, clean first-party import and zero layout findings. This accurately preserves RES-01–03 no-replay/charged-unknown behavior and the historical ten unknowns; it introduces no runtime/model/control change or new proof. Current UI/capture bytes and historical evidence are unchanged. Final guarded export, release, exact archives and fresh extraction remain root Plan03 gates. Generator SHA256: `302c60913b63cfa21b6158f3fe477fca77157dda9433945c79ad4baa906326f1`. Earlier dated candidate/checkpoint claims below remain historical.
+
+
+## Current independent judge-story review supplement — 2026-10-04T08:06:00Z
+
+Current assessed freeze: `44c57cde5aeab97ff9bd1eaef20bbde4221b10a3`. This supersedes earlier current source identities while retaining the historical review and findings. Independent quick261004-d3a REVIEW is clean with0findings across eight changed source/claim/test files. The verifier additionally read the final slide8 clarification, current provenance/pitch and local delivery instructions; no new concrete correctness/security defect was established.
+
+The affected result renderer derives names, recommendations and USD from real host-projected rows through safe text nodes. Cents/100 matches bounded source integers. Changed markup preserves every prior controller/action ID; labels, native summaries, status regions, version/draft guards, model/public-input disclosure, exact-save predicates, unknown no-replay and shared finite allowance remain wired. Two independently executed named host/UI tests pass, checking private drafts/value changes/zero providers/exact save/read-back and service-risk changes/hostile names. Root339/339 regression log was independently inspected; no full suite or paid proof was repeated here.
+
+The current actual PNG was independently viewed: Middle/Large,1,060USD potential opportunity and historical independent-save status are clear. Nine native candidate PDF pages plus qualified page8 were independently viewed. Native PPTX text/notes and five editable diagram connectors were inspected structurally; supplied import/layout/integrity evidence is clean. The qualified historical-injection caption narrows the earlier no-causal-gain wording without changing original notes or inventing inference/savings claims. Private qualified candidate PPTX `e0f6906cc99c75152ce364125ba56e577eee27c61a6bfaa05549fb6933ea2e46`, PDF `3c109808b46c9f8d9033fd853f4b10336d7e68074938e2c0991547760425e3bc`; final guarded promotion remains root-owned.
+
+Root's separately dated native Chrome55Tab/Enter private disclosure test and1440/768/390 labels/no-overflow record passed with0mutations. Prior GSD Tab attempt stays unverified; no full accessibility certification is claimed. Strict evidence-envelope validation passes with actual current screenshot/backup bytes; eight historical nested sections remain unchanged. The complete all26 obligation/decision compatibility assessment and executable evidence appear in the current canonical VERIFICATION supplement. Existing security/UI scores/closures remain scoped historical baselines.
+
+No source, validator/schema, provider/store, deployment, Git or package mutation was performed by this review supplement. Final content/release, promotion, exact manifests/archives/fresh extraction and receipt remain integrator gates; current report acceptance does not announce final delivery completion.
+
 
 
 ## External-audit documentary follow-up — 4 October 2026
